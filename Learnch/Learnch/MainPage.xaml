@@ -24,8 +24,7 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="140" />
-                <RowDefinition Height="240" />
-                <RowDefinition Height="240" />
+                <RowDefinition Height="470" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid Grid.ColumnSpan="2" Grid.Column="0">
@@ -41,7 +40,7 @@
                 <TextBlock x:Name="pageTitle" Text="Learn.ch" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
             </Grid>
-            <StackPanel Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" >
+            <StackPanel Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" >
                 <TextBlock
                     FontSize="60"
                     Text="Menu"/>
@@ -80,7 +79,7 @@
                     Text="etc"/>
 
             </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <StackPanel Grid.Column="1" Grid.Row="1">
                 <TextBlock 
                     Text="Recommend-Course" 
                     FontSize="60" />
@@ -94,7 +93,7 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    
+
                     <Grid 
                         Width="400"
                         Height="200"
@@ -155,7 +154,7 @@
                         Grid.Row="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="150"/>
-                            <RowDefinition Height="50"/>                            
+                            <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
                         <Image
                             Grid.Row="0"
@@ -289,7 +288,7 @@
                 </Grid>
             </StackPanel>
             <Grid
-                Grid.Row="3"
+                Grid.Row="2"
                 Grid.Column="1">
                 <StackPanel>
                     <TextBlock 
@@ -349,7 +348,7 @@
             <StackPanel
                 Grid.Row="1"
                 Grid.Column="2"
-                Grid.RowSpan="3">
+                Grid.RowSpan="2">
                 <TextBlock
                     Text="Course_Gourmet"
                     FontSize="40"

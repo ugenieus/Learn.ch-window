@@ -137,7 +137,8 @@
                             Grid.Column="0"
                             Grid.ColumnSpan="2"
                             Background="BlueViolet">
-                            <StackPanel>
+                            <StackPanel
+                                Tapped="Video_Tapped">
                                 <Image
                                     HorizontalAlignment="Left"
                                     Width="100"

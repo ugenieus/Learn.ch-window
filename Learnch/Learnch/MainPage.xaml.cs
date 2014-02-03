@@ -26,5 +26,21 @@ namespace Learnch
         {
             this.InitializeComponent();
         }
+
+        private void Course_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Course));
+        }
+
+        private void Kitchen_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ChefKitchen));
+        }
+
+        private void Category_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Category));
+        }
+        
     }
 }

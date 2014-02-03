@@ -26,5 +26,10 @@ namespace Learnch
         {
             this.InitializeComponent();
         }
+
+        private void Video_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Video));
+        }
     }
 }

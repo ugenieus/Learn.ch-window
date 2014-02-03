@@ -6,6 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Background="#FFBD8989">
+	<Page.Resources>
+		<Style x:Key="text_name" TargetType="TextBlock"/>
+	</Page.Resources>
 
     <ScrollViewer 
         Visibility="Visible"
@@ -15,7 +18,7 @@
         HorizontalScrollMode="Enabled"
         ZoomMode="Disabled">
         <Grid x:Name="body"
-            Background="#FF666666" Margin="0">
+            Background="#FFE2E2E2" Margin="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="34" />
                 <ColumnDefinition Width="290"/>
@@ -23,50 +26,50 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="64*"/>
-                <RowDefinition Height="175*" />
-                <RowDefinition Height="176*"/>
-                <RowDefinition Height="85*"/>
-                <RowDefinition Height="40*"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Margin="0" Grid.RowSpan="5" Background="#FF79BC9F" Grid.ColumnSpan="2"/>
             <TextBlock x:Name="pageTitle" Text="Learn.ch" Style="{StaticResource HeaderTextBlockStyle}" 
-        		IsHitTestVisible="false" TextWrapping="NoWrap" Margin="0" Grid.Row="0" Grid.Column="1" Height="50"/>
+        		IsHitTestVisible="false" TextWrapping="NoWrap" Margin="0" Grid.Row="0" Grid.Column="1" Height="50" Foreground="White"/>
             <StackPanel x:Name="menu_list" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2" >
                 <Image Source="Assets/main_menu.png" Stretch="None" Height="46"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="All" Margin="0" TextAlignment="Center"/>
+                	Text="All" Margin="0,10,0,0" TextAlignment="Center" Foreground="White"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Technology" TextAlignment="Center" Height="36"/>
+                	Text="Technology" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Art" TextAlignment="Center" Height="36"/>
+                	Text="Art" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Culture" TextAlignment="Center" Height="36"/>
+                	Text="Culture" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Social Science" TextAlignment="Center" Height="36"/>
+                	Text="Social Science" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Language" TextAlignment="Center" Height="36"/>
+                	Text="Language" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Literature" TextAlignment="Center" Height="36"/>
+                	Text="Literature" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="IT" TextAlignment="Center" Height="36"/>
+                	Text="IT" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Economy" TextAlignment="Center" Height="36"/>
+                	Text="Economy" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="Entertainment" TextAlignment="Center" Height="36"/>
+                	Text="Entertainment" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
                 <TextBlock
                 	FontSize="30"
-                	Text="etc" TextAlignment="Center" Height="36"/>
+                	Text="etc" TextAlignment="Center" Height="36" Foreground="White" Margin="0,10,0,0"/>
 
             </StackPanel>
             <StackPanel x:Name="recommended_course" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3">
@@ -153,7 +156,7 @@
                             Grid.Row="0"
                             VerticalAlignment="Center"
                             Stretch="UniformToFill"
-                            Source="Assets/Logo.png"/>
+                            Source="Assets/dummy.png"/>
                         <Image
                             Grid.Row="0" 
                             Height="50"
@@ -280,7 +283,7 @@
                     </Grid>
                 </Grid>
             </StackPanel>
-            <StackPanel x:Name="recommended_chef" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="3">
+            <StackPanel x:Name="recommended_chef" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="3" Margin="0,0,-30,0.143">
             	<TextBlock 
             		FontSize="34.667" Foreground="#FF8D8D8D" Margin="0,0,300,0" >
             		<Run Text="Recommend"/>
@@ -290,54 +293,52 @@
             		<Run Text="e"/>
             		<Run Text="f"/>
             	</TextBlock>
-            	<Grid>
-            		<Grid.ColumnDefinitions>
-            			<ColumnDefinition Width="Auto"/>
-            			<ColumnDefinition Width="Auto"/>
-            			<ColumnDefinition Width="Auto"/>
-            			<ColumnDefinition Width="Auto"/>
-            		</Grid.ColumnDefinitions>
-            		<StackPanel 
-            			Grid.Column="0">
+            	<VariableSizedWrapGrid Orientation="Horizontal">
+            		<StackPanel Orientation="Horizontal" Margin="0,0,10,0" Background="#FFFDFDFD">
             			<Image 
             				Height="60"
-            				Source="Assets/Logo.png"/>
-            			<TextBlock
-            				FontSize="20"
-            				HorizontalAlignment="Center"
-            				Text="Chef Name"/>
+            				Source="Assets/dummy.png" Width="60"/>
+            			<Grid Width="123" Margin="10,0,0,0">
+            				<Grid.RowDefinitions>
+            					<RowDefinition/>
+            					<RowDefinition Height="Auto"/>
+            					<RowDefinition Height="Auto"/>
+            					<RowDefinition/>
+            				</Grid.RowDefinitions>
+            				<TextBlock x:Name="chef_name1"
+            					FontSize="20"
+            					HorizontalAlignment="Left" Foreground="#FF8D8D8D" FontWeight="Bold" Style="{StaticResource text_name}" Margin="0,0,0,12.143" Grid.Row="2">
+            					<Run Text="O"/>
+            					<Run Text="Ilicia Ong"/>
+            				</TextBlock>
+            				<TextBlock x:Name="gourmets1"
+            					FontSize="13.333"
+            					HorizontalAlignment="Left" Foreground="#FF8D8D8D" Style="{StaticResource text_name}" Text="265 gourmets" Margin="0,19,0,-2" Grid.RowSpan="2" Grid.Row="2" Padding="0,5,0,0"/>
+            			</Grid>
             		</StackPanel>
-            		<StackPanel 
-            			Grid.Column="1">
+            		<StackPanel Orientation="Horizontal" Margin="0,0,10,0" Width="200" Background="#FFFDFDFD">
             			<Image 
             				Height="60"
-            				Source="Assets/Logo.png"/>
-            			<TextBlock
-            				FontSize="20"
-            				HorizontalAlignment="Center"
-            				Text="Chef Name"/>
+            				Source="Assets/dummy.png" Width="60"/>
+            			<Grid Width="123" Margin="10,0,0,0">
+            				<Grid.RowDefinitions>
+            					<RowDefinition/>
+            					<RowDefinition Height="Auto"/>
+            					<RowDefinition Height="Auto"/>
+            					<RowDefinition/>
+            				</Grid.RowDefinitions>
+            				<TextBlock x:Name="chef_name3"
+            					FontSize="20"
+            					HorizontalAlignment="Left" Foreground="#FF8D8D8D" FontWeight="Bold" Style="{StaticResource text_name}" Margin="0,0,0,12.143" Grid.Row="2">
+            					<Run Text="O"/>
+            					<Run Text="Ilicia Ong"/>
+            				</TextBlock>
+            				<TextBlock x:Name="gourmets3"
+            					FontSize="13.333"
+            					HorizontalAlignment="Left" Foreground="#FF8D8D8D" Style="{StaticResource text_name}" Text="265 gourmets" Margin="0,19,0,-2" Grid.RowSpan="2" Grid.Row="2" Padding="0,5,0,0"/>
+            			</Grid>
             		</StackPanel>
-            		<StackPanel 
-            			Grid.Column="2">
-            			<Image 
-            				Height="60"
-            				Source="Assets/Logo.png"/>
-            			<TextBlock
-            				FontSize="20"
-            				HorizontalAlignment="Center"
-            				Text="Chef Name"/>
-            		</StackPanel>
-            		<StackPanel 
-            			Grid.Column="3">
-            			<Image 
-            				Height="60"
-            				Source="Assets/Logo.png"/>
-            			<TextBlock
-            				FontSize="20"
-            				HorizontalAlignment="Center"
-            				Text="Chef Name"/>
-            		</StackPanel>
-            	</Grid>
+            	</VariableSizedWrapGrid>
             </StackPanel>
             <StackPanel x:Name="courselist_gourmet"
             	Grid.Row="1"

@@ -89,7 +89,75 @@
         <Style x:Key="main_chefName" TargetType="TextBlock">
         	<Setter Property="FontWeight" Value="Normal"/>
         </Style>
+        <Style x:Key="btnMenuItem" TargetType="Button">
+        	<Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}"/>
+        	<Setter Property="Foreground" Value="{ThemeResource ButtonForegroundThemeBrush}"/>
+        	<Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderThemeBrush}"/>
+        	<Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+        	<Setter Property="Padding" Value="12,4,12,4"/>
+        	<Setter Property="HorizontalAlignment" Value="Left"/>
+        	<Setter Property="VerticalAlignment" Value="Center"/>
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontWeight" Value="SemiBold"/>
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Grid>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="PointerOver"/>
+        							<VisualState x:Name="Pressed"/>
+        							<VisualState x:Name="Disabled">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBorderThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="FocusStates">
+        							<VisualState x:Name="Focused">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualWhite"/>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualBlack"/>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Unfocused"/>
+        							<VisualState x:Name="PointerFocused"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="0" Background="#FF66A88B">
+        						<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Foreground="#FFAC2B2B"/>
+        					</Border>
+        					<Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" StrokeDashArray="1,1" Stroke="#FF66A88B" d:IsHidden="True">
+        						<Rectangle.Fill>
+        							<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        								<GradientStop Color="Black" Offset="0"/>
+        								<GradientStop Color="#FF66A88B" Offset="1"/>
+        							</LinearGradientBrush>
+        						</Rectangle.Fill>
+        					</Rectangle>
+        					<Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="#FF66A88B" StrokeDashArray="1,1" d:IsHidden="True"/>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
     </Page.Resources>
+	<Page.TopAppBar>
+		<AppBar>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<StackPanel Orientation="Horizontal"/>
+				<StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
+			</Grid>
+		</AppBar>
+	</Page.TopAppBar>
 
     <ScrollViewer Visibility="Visible"
                   HorizontalScrollBarVisibility="Hidden"
@@ -138,16 +206,25 @@
                 <TextBlock Tapped="Category_Tapped"
                            Text="All"
                            Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Technology"
-                           Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Art"
-                           Style="{StaticResource CategoryTextStyle}" />
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Technology"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Button>
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Art"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" Width="325" />
+                </Button>
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40"/>
                 <TextBlock Text="Culture"
                            Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Social Science"
-                           Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Language"
-                           Style="{StaticResource CategoryTextStyle}" />
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Social Science"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" Width="325" />
+                </Button>
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Language"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" Width="325" />
+                </Button>
                 <TextBlock Text="Literature"
                            Style="{StaticResource CategoryTextStyle}" />
                 <TextBlock Text="IT"

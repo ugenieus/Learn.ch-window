@@ -112,14 +112,15 @@ namespace Learnch
             this.Frame.Navigate(typeof(ChefKitchenPage));
         }
 
-        private void Category_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CategoryPage));
-        }
 
         private void Chef_Table_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(ChefTablePage));
+        }
+
+        private void btnAll_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CategoryPage));
         }
     }
 }

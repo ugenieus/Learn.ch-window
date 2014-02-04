@@ -8,7 +8,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
-    
+
     <Page.Resources>
         <Style x:Key="CategoryTextStyle"
                TargetType="TextBlock">
@@ -73,6 +73,70 @@
                     Value="#FF8D8D8D" />
         </Style>
     </Page.Resources>
+    <Page.TopAppBar>
+        <AppBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal"
+                            Grid.Column="0"
+                            HorizontalAlignment="Left">
+                    <AppBarButton x:Uid="Camera"
+                                  Icon="Camera"
+                                  Label="Camera" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Grid.Column="1"
+                            HorizontalAlignment="Right">
+                    <AppBarButton x:Uid="Add"
+                                  Icon="Add"
+                                  Label="Add" />
+                    <AppBarButton x:Uid="Remove"
+                                  Icon="Remove"
+                                  Label="Remove" />
+                    <AppBarSeparator />
+                    <AppBarButton x:Uid="Delete"
+                                  Icon="Delete"
+                                  Label="Delete" />
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.TopAppBar>
+    <Page.BottomAppBar>
+        <AppBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="LeftPanel"
+                            Orientation="Horizontal"
+                            Grid.Column="0"
+                            HorizontalAlignment="Left">
+                    <AppBarButton x:Uid="Camera"
+                                  Icon="Camera"
+                                  Label="Camera" />
+                </StackPanel>
+                <StackPanel x:Name="RightPanel"
+                            Orientation="Horizontal"
+                            Grid.Column="1"
+                            HorizontalAlignment="Right">
+                    <AppBarButton x:Uid="Add"
+                                  Icon="Add"
+                                  Label="Add" />
+                    <AppBarButton x:Uid="Remove"
+                                  Icon="Remove"
+                                  Label="Remove" />
+                    <AppBarSeparator />
+                    <AppBarButton x:Uid="Delete"
+                                  Icon="Delete"
+                                  Label="Delete" />
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
 
     <ScrollViewer Visibility="Visible"
                   HorizontalScrollBarVisibility="Hidden"

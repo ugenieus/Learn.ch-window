@@ -1,5 +1,5 @@
 ﻿<Page x:Name="pageRoot"
-      x:Class="Learnch.PageHome"
+      x:Class="Learnch.HomePage"
       DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -581,7 +581,8 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
+                    <Grid Grid.Column="0"
+                          Tapped="Chef_Table_Tapped">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="150" />
                             <RowDefinition Height="50" />

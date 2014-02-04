@@ -115,6 +115,9 @@
     <Compile Include="ChefKitchenPage.xaml.cs">
       <DependentUpon>ChefKitchenPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChefTablePage.xaml.cs">
+      <DependentUpon>ChefTablePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
@@ -160,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChefKitchenPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChefTablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

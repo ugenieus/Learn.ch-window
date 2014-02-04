@@ -21,7 +21,7 @@ namespace Learnch
     /// <summary>
     /// 대부분의 응용 프로그램에 공통되는 특성을 제공하는 기본 페이지입니다.
     /// </summary>
-    public sealed partial class PageHome : Page
+    public sealed partial class CoursePage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +45,7 @@ namespace Learnch
         }
 
 
-        public PageHome()
+        public CoursePage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -101,20 +101,11 @@ namespace Learnch
             navigationHelper.OnNavigatedFrom(e);
         }
 
-        #endregion        
-        private void Course_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CoursePage));
-        }
+        #endregion
 
-        private void Kitchen_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Video_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ChefKitchenPage));
-        }
-
-        private void Category_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CategoryPage));
+            this.Frame.Navigate(typeof(VideoPage));
         }
     }
 }

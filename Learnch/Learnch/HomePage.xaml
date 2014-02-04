@@ -72,6 +72,79 @@
             <Setter Property="Foreground"
                     Value="#FF8D8D8D" />
         </Style>
+        <Style x:Key="ChefNameStyle" TargetType="TextBlock">
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="SelectionHighlightColor" Value="{ThemeResource TextSelectionHighlightColorThemeBrush}"/>
+        	<Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        	<Setter Property="TextWrapping" Value="Wrap"/>
+        	<Setter Property="Typography.StylisticSet20" Value="True"/>
+        	<Setter Property="Typography.DiscretionaryLigatures" Value="True"/>
+        	<Setter Property="Typography.CaseSensitiveForms" Value="True"/>
+        	<Setter Property="LineHeight" Value="20"/>
+        	<Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
+        	<Setter Property="TextLineBounds" Value="TrimToBaseline"/>
+        	<Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+        </Style>
+        <Style x:Key="main_chefName" TargetType="TextBlock">
+        	<Setter Property="FontWeight" Value="Normal"/>
+        </Style>
+        <Style x:Key="btnMenuItem" TargetType="Button">
+        	<Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}"/>
+        	<Setter Property="Foreground" Value="{ThemeResource ButtonForegroundThemeBrush}"/>
+        	<Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderThemeBrush}"/>
+        	<Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+        	<Setter Property="Padding" Value="12,4,12,4"/>
+        	<Setter Property="HorizontalAlignment" Value="Left"/>
+        	<Setter Property="VerticalAlignment" Value="Center"/>
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontWeight" Value="SemiBold"/>
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Grid>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="PointerOver"/>
+        							<VisualState x:Name="Pressed"/>
+        							<VisualState x:Name="Disabled">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBorderThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="FocusStates">
+        							<VisualState x:Name="Focused">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualWhite"/>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualBlack"/>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Unfocused"/>
+        							<VisualState x:Name="PointerFocused"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="0" Background="#FF66A88B">
+        						<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Foreground="#FFAC2B2B"/>
+        					</Border>
+        					<Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" StrokeDashArray="1,1" Stroke="#FF66A88B" d:IsHidden="True">
+        						<Rectangle.Fill>
+        							<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        								<GradientStop Color="Black" Offset="0"/>
+        								<GradientStop Color="#FF66A88B" Offset="1"/>
+        							</LinearGradientBrush>
+        						</Rectangle.Fill>
+        					</Rectangle>
+        					<Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="#FF66A88B" StrokeDashArray="1,1" d:IsHidden="True"/>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
     </Page.Resources>
     <Page.TopAppBar>
         <AppBar>
@@ -138,6 +211,7 @@
         </AppBar>
     </Page.BottomAppBar>
 
+
     <ScrollViewer Visibility="Visible"
                   HorizontalScrollBarVisibility="Hidden"
                   VerticalScrollBarVisibility="Disabled"
@@ -185,16 +259,25 @@
                 <TextBlock Tapped="Category_Tapped"
                            Text="All"
                            Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Technology"
-                           Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Art"
-                           Style="{StaticResource CategoryTextStyle}" />
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Technology"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Button>
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Art"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" Width="325" />
+                </Button>
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40"/>
                 <TextBlock Text="Culture"
                            Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Social Science"
-                           Style="{StaticResource CategoryTextStyle}" />
-                <TextBlock Text="Language"
-                           Style="{StaticResource CategoryTextStyle}" />
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Social Science"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" Width="325" />
+                </Button>
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="#00000000" BorderBrush="#00000000" Background="#00B6B6B6" Height="40">
+                	<TextBlock Text="Language"
+                		Style="{StaticResource CategoryTextStyle}" Margin="0" Width="325" />
+                </Button>
                 <TextBlock Text="Literature"
                            Style="{StaticResource CategoryTextStyle}" />
                 <TextBlock Text="IT"
@@ -248,7 +331,7 @@
                                    Source="Assets/Logo.png" />
                             <TextBlock FontSize="20"
                                        HorizontalAlignment="Center"
-                                       Text="Chef Name" />
+                                       Text="Chef Name" Style="{StaticResource ChefNameStyle}" />
                         </StackPanel>
                         <StackPanel Grid.Column="1"
                                     Grid.Row="1">
@@ -408,10 +491,9 @@
                                        FontSize="20"
                                        HorizontalAlignment="Left"
                                        Foreground="#FF8D8D8D"
-                                       FontWeight="Bold"
                                        Margin="0,0,0,12"
                                        Grid.Row="2"
-                                       Grid.ColumnSpan="2">
+                                       Grid.ColumnSpan="2" Style="{StaticResource main_chefName}">
             					<Run Text="O" />
             					<Run Text="Ilicia Ong" />
                             </TextBlock>
@@ -445,9 +527,8 @@
                                        FontSize="20"
                                        HorizontalAlignment="Left"
                                        Foreground="#FF8D8D8D"
-                                       FontWeight="Bold"
                                        Margin="0,0,0,12.143"
-                                       Grid.Row="2">
+                                       Grid.Row="2" Style="{StaticResource main_chefName}">
             					<Run Text="O" />
             					<Run Text="Ilicia Ong" />
                             </TextBlock>
@@ -480,9 +561,8 @@
                             <TextBlock FontSize="20"
                                        HorizontalAlignment="Left"
                                        Foreground="#FF8D8D8D"
-                                       FontWeight="Bold"
                                        Margin="0,0,0,12.143"
-                                       Grid.Row="2">
+                                       Grid.Row="2" Style="{StaticResource main_chefName}">
             					<Run Text="O" />
             					<Run Text="Ilicia Ong" />
                             </TextBlock>
@@ -514,9 +594,8 @@
                             <TextBlock FontSize="20"
                                        HorizontalAlignment="Left"
                                        Foreground="#FF8D8D8D"
-                                       FontWeight="Bold"
                                        Margin="0,0,0,12.143"
-                                       Grid.Row="2">
+                                       Grid.Row="2" Style="{StaticResource main_chefName}">
             					<Run Text="O" />
             					<Run Text="Ilicia Ong" />
                             </TextBlock>
@@ -548,9 +627,8 @@
                             <TextBlock FontSize="20"
                                        HorizontalAlignment="Left"
                                        Foreground="#FF8D8D8D"
-                                       FontWeight="Bold"
                                        Margin="0,0,0,12.143"
-                                       Grid.Row="2">
+                                       Grid.Row="2" Style="{StaticResource main_chefName}">
             					<Run Text="O" />
             					<Run Text="Ilicia Ong" />
                             </TextBlock>
@@ -596,7 +674,7 @@
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center"
                                    Text="Chef Name"
-                                   FontSize="20" />
+                                   FontSize="20" Style="{StaticResource ChefNameStyle}" />
                         <StackPanel Grid.Row="1">
                             <TextBlock Text="Category"
                                        FontSize="20" />

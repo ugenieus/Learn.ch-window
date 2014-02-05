@@ -75,13 +75,13 @@
                 <TextBlock Text="Profile"
             		FontSize="40" Style="{StaticResource titleTextGray}" Margin="0" FontWeight="Thin" />
                 <Image Source="Assets/profile_150_user1.png" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                <TextBlock FontSize="30"
+                <TextBlock FontSize="24"
                            Text="Olivia Shewerzki" Margin="0,10,0,0" CharacterSpacing="-20" FontWeight="Thin" >
                 	<TextBlock.Foreground>
                 		<SolidColorBrush Color="{StaticResource green}"/>
                 	</TextBlock.Foreground>
                 </TextBlock>
-                <TextBlock FontSize="18.667"
+                <TextBlock FontSize="16"
                            Text="Olivia_Sh@hotmail.com" >
                 	<TextBlock.Foreground>
                 		<SolidColorBrush Color="{StaticResource lightGray}"/>
@@ -89,10 +89,10 @@
                 </TextBlock>
                 <TextBlock
                            Text="Bio"
-                           Margin="0,40,0,0" Style="{StaticResource textGreenMiddle}" FontSize="{StaticResource textMiddleSize}" FontWeight="Thin" />
+                           Margin="0,20,0,0" Style="{StaticResource textGreenMiddle}" FontSize="{StaticResource textMiddleSize}" FontWeight="Thin" />
                 <TextBlock TextWrapping="WrapWholeWords"
-                           FontSize="20"
-                           Text="Olivia is a multi-disciplinary designer passionate about producing creative projects of the highest quality across digital, print, branding and interactive media" Height="163" MaxLines="6" FontStretch="Undefined" CharacterSpacing="10" >
+                           FontSize="16"
+                           Text="Olivia is a multi-disciplinary designer passionate about producing creative projects of the highest quality across digital, print, branding and interactive media" Height="118" MaxLines="6" FontStretch="Undefined" CharacterSpacing="10" >
                 	<TextBlock.Foreground>
                 		<SolidColorBrush Color="{StaticResource lightGray}"/>
                 	</TextBlock.Foreground>
@@ -102,7 +102,7 @@
                 		FontSize="{StaticResource textMiddleSize}"
                 		Text="Course" Style="{StaticResource textGreenMiddle}" VerticalAlignment="Center" FontWeight="Thin" />
                 	<TextBlock Margin="10,0,0,0"
-                		FontSize="20"
+                		FontSize="16"
                 		Text="3" VerticalAlignment="Center" >
                 		<TextBlock.Foreground>
                 			<SolidColorBrush Color="{StaticResource lightGray}"/>
@@ -114,7 +114,7 @@
                 		FontSize="{StaticResource textMiddleSize}"
                 		Text="Gourmet" Style="{StaticResource textGreenMiddle}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Thin" />
                 	<TextBlock Margin="10,0,0,0"
-                		FontSize="20"
+                		FontSize="16"
                 		Text="1820" VerticalAlignment="Center" >
                 		<TextBlock.Foreground>
                 			<SolidColorBrush Color="{StaticResource lightGray}"/>
@@ -191,7 +191,7 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
-                <StackPanel Height="190" MinHeight="50" MaxHeight="300"/>
+                <StackPanel Height="50" MinHeight="10" MaxHeight="300"/>
 
 
                 <TextBlock Text="Course_Chef"
@@ -282,53 +282,37 @@
                         Grid.Row="1" Margin="0.286,0,-0.286,0">
                 <TextBlock x:Name="mission_badge" Text="Mission Badges"
                            FontSize="40" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
-                <StackPanel
-                            Orientation="Horizontal" Height="130">
-                    <Image Source="Assets/badge_01.png" Margin="0,10,15,10" Width="90" Height="90" ToolTipService.ToolTip="Best Score" />
-                    <Image Source="Assets/badge_02.png" Margin="0,10,15,10" Width="90" Height="90" ToolTipService.ToolTip="2014 Learncher of the Year" />
-                    <Image Source="Assets/badge_07.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                </StackPanel>
-                <StackPanel
-                            Orientation="Horizontal" Height="130" MinWidth="100" MinHeight="150">
-                    <Image Source="Assets/badge_03.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_05.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                    <Image Source="Assets/Logo.png" Margin="0,10,15,10" Width="90" Height="90" />
-                </StackPanel>
-                <StackPanel Height="100" MinHeight="10" MaxHeight="100"/>
+                <VariableSizedWrapGrid Margin="0" Height="200" MinHeight="190" MaxHeight="300">
+                	<Image Source="Assets/badge_01.png" Height="90" ToolTipService.ToolTip="Best Score" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_02.png" Height="90" ToolTipService.ToolTip="2014 Learncher of the Year" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_07.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_03.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_05.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                </VariableSizedWrapGrid>
+                <StackPanel Height="40" MinHeight="10" MaxHeight="100"/>
                 <TextBlock x:Name="course_badge" Text="Course Badges"
                            FontSize="40" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
-                <StackPanel
-                	Orientation="Horizontal" Height="130">
-                	<Image Source="Assets/badge_course_01.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_course_02.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                </StackPanel>
-                <StackPanel
-                	Orientation="Horizontal" Height="130" MinWidth="100" MinHeight="150">
-                	<Image Source="Assets/badge_course_03.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                	<Image Source="Assets/badge_defualt.png" Margin="0,10,15,10" Width="90" Height="90" />
-                </StackPanel>
+                <VariableSizedWrapGrid Height="200" Margin="0,0,10,10">
+                	<Image Source="Assets/badge_course_01.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_course_02.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_course_03.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                </VariableSizedWrapGrid>
             </StackPanel>
 
         </Grid>

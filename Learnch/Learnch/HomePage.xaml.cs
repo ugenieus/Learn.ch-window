@@ -122,5 +122,10 @@ namespace Learnch
         {
             this.Frame.Navigate(typeof(ChefKitchenPage));
         }
+
+        private void sss(object sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
+        {
+        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+        }
     }
 }

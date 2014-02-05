@@ -131,12 +131,76 @@
         									<VisualTransition.GeneratedEasingFunction>
         										<CircleEase EasingMode="EaseIn"/>
         									</VisualTransition.GeneratedEasingFunction>
-        									<Storyboard>
-        										<ColorAnimation Duration="0" To="White" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="FocusVisualWhite" d:IsOptimized="True"/>
-        										<ColorAnimation Duration="0" To="White" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="FocusVisualWhite" d:IsOptimized="True"/>
-        									</Storyboard>
         								</VisualTransition>
         							</VisualStateGroup.Transitions>
+        							<VisualState x:Name="Focused"/>
+        							<VisualState x:Name="Unfocused"/>
+        							<VisualState x:Name="PointerFocused"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="0" Background="#0066A88B">
+        						<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Foreground="#FFAC2B2B"/>
+        					</Border>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="AppBarButtonStyle1" TargetType="AppBarButton">
+        	<Setter Property="Foreground" Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        	<Setter Property="VerticalAlignment" Value="Top"/>
+        	<Setter Property="HorizontalAlignment" Value="Left"/>
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontWeight" Value="Normal"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="AppBarButton">
+        				<Grid x:Name="RootGrid" Background="Transparent" Width="100">
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="ApplicationViewStates">
+        							<VisualState x:Name="FullSize"/>
+        							<VisualState x:Name="Compact">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="TextLabel">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Width" Storyboard.TargetName="RootGrid">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="60"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="PointerOver">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemPointerOverBackgroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke" Storyboard.TargetName="OutlineEllipse">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke" Storyboard.TargetName="OutlineEllipse">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="TextLabel">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="FocusStates">
         							<VisualState x:Name="Focused">
         								<Storyboard>
         									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualWhite"/>
@@ -147,37 +211,36 @@
         							<VisualState x:Name="PointerFocused"/>
         						</VisualStateGroup>
         					</VisualStateManager.VisualStateGroups>
-        					<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="0" Background="#0066A88B">
-        						<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Foreground="#FFAC2B2B"/>
-        					</Border>
-        					<Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" StrokeDashArray="1,1" Stroke="#FF66A88B" d:IsHidden="True">
-        						<Rectangle.Fill>
-        							<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-        								<GradientStop Color="Black" Offset="0"/>
-        								<GradientStop Color="#FF66A88B" Offset="1"/>
-        							</LinearGradientBrush>
-        						</Rectangle.Fill>
-        					</Rectangle>
-        					<Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="#FF66A88B" StrokeDashArray="1,1" d:IsHidden="True"/>
+        					<StackPanel Margin="0,14,0,13" VerticalAlignment="Top">
+        						<Grid HorizontalAlignment="Center" Height="100" Margin="0,0,0,5" Width="100">
+        							<Ellipse x:Name="BackgroundEllipse" Fill="{ThemeResource AppBarItemBackgroundThemeBrush}" Height="100" UseLayoutRounding="False" Width="100" d:IsHidden="True"/>
+        							<Ellipse x:Name="OutlineEllipse" Height="100" Stroke="{ThemeResource AppBarItemForegroundThemeBrush}" StrokeThickness="2" UseLayoutRounding="False" Width="100" d:IsHidden="True"/>
+        							<ContentPresenter x:Name="Content" AutomationProperties.AccessibilityView="Raw" Content="{TemplateBinding Icon}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="100" Height="100" Foreground="{x:Null}"/>
+        						</Grid>
+        						<TextBlock x:Name="TextLabel" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" FontSize="12" FontFamily="{TemplateBinding FontFamily}" TextAlignment="Center" TextWrapping="Wrap" Text="{TemplateBinding Label}" Width="88"/>
+        					</StackPanel>
+        					<Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashArray="1,1" d:IsHidden="True"/>
+        					<Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}" StrokeDashArray="1,1" d:IsHidden="True"/>
         				</Grid>
         			</ControlTemplate>
         		</Setter.Value>
         	</Setter>
         </Style>
+        <x:Double x:Key="MenuMaxHeight">80</x:Double>
     </Page.Resources>
     <Page.TopAppBar>
-        <AppBar>
+        <AppBar Margin="0,0,0.429,-53.857">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*" />
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Horizontal"
-                            Grid.Column="0"
-                            HorizontalAlignment="Left">
-                    <AppBarButton x:Uid="Camera"
-                                  Icon="Camera"
-                                  Label="Camera" />
+                <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100">
+                	<AppBarButton HorizontalAlignment="Stretch" Label="AppBarButton" VerticalAlignment="Stretch">
+                		<AppBarButton.Icon>
+                			<BitmapIcon UriSource="Assets/btn_appbar_home.png"/>
+                		</AppBarButton.Icon>
+                	</AppBarButton>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Grid.Column="1"
@@ -247,11 +310,11 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition />
+                <RowDefinition MinHeight="100" />
+                <RowDefinition Height="Auto" MinHeight="240" />
+                <RowDefinition Height="Auto" MinHeight="244" />
+                <RowDefinition Height="Auto" MinHeight="221" />
+                <RowDefinition MinHeight="100" />
             </Grid.RowDefinitions>
             <StackPanel Margin="0"
                         Grid.RowSpan="5"
@@ -262,16 +325,15 @@
                        Style="{StaticResource HeaderTextBlockStyle}"
                        IsHitTestVisible="false"
                        TextWrapping="NoWrap"
-                       Margin="0"
+                       Margin="0,25"
                        Grid.Row="0"
                        Grid.Column="1"
-                       Height="50"
                        Foreground="White" />
             <StackPanel x:Name="menu_list"
                         Grid.Column="0"
                         Grid.Row="1"
                         Grid.RowSpan="3"
-                        Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+                        Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" MinHeight="400">
             	<StackPanel.RenderTransform>
             		<CompositeTransform/>
             	</StackPanel.RenderTransform>
@@ -286,7 +348,7 @@
                         BorderBrush="{x:Null}"
                         Background="{x:Null}"
                         Click="btnAll_Click"
-                        Height="50">
+                        Height="40" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                     <TextBlock Text="All"
                                Style="{StaticResource CategoryTextStyle}"
                                Margin="0,-10,0,0"
@@ -295,43 +357,43 @@
                                FontWeight="Normal"
                                FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnTach" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="50">
+                <Button x:Name="btnTach" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="Technology"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnArt" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="Art"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnCulture" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnCulture" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="59" MinHeight="40" MaxHeight="80">
                 	<TextBlock Text="Culture"
-                		Style="{StaticResource CategoryTextStyle}" FontSize="29.333" Margin="0,-10,0,0" Width="325" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" />
+                		Style="{StaticResource CategoryTextStyle}" FontSize="29.333" Margin="0,-10,0,0" HorizontalAlignment="Center" FontWeight="Normal" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40" VerticalAlignment="Center" />
                 </Button>
-                <Button x:Name="btnArt1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="Social Science"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnArt2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="Language"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnArt3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="Litrtature"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnArt4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="IT"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnArt5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="Economy"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnArt6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="Entertainment"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
-                <Button x:Name="btnArt7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="50">
+                <Button x:Name="btnArt7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Height="60" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
                 	<TextBlock Text="ETC"
                 		Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="29.333" />
                 </Button>
@@ -339,180 +401,105 @@
             </StackPanel>
             <StackPanel x:Name="recommended_course"
                         Grid.Column="2"
-                        Grid.Row="1"
-                        Grid.RowSpan="3">
+                        Grid.Row="1" MinHeight="203" Grid.RowSpan="2" VerticalAlignment="Top" Height="430">
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                            Text="Recommended Course" />
-                <Grid Margin="0,20,0,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="200" />
-                        <RowDefinition Height="200" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Grid Tapped="Course_Tapped"
-                          Width="400"
-                          Height="200"
-                          Grid.Column="0"
-                          Grid.Row="0"
-                          Grid.ColumnSpan="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="100" />
-                            <RowDefinition Height="50" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200" />
-                            <ColumnDefinition Width="200" />
-                        </Grid.ColumnDefinitions>
-                        <Image Stretch="UniformToFill"
-                               Grid.RowSpan="2"
-                               Source="Assets/Logo.png" />
-                        <StackPanel Grid.Column="1"
-                                    Grid.Row="0">
-                            <Image Height="60"
-                                   Source="Assets/Logo.png" />
-                            <TextBlock FontSize="20"
-                                       HorizontalAlignment="Center"
-                                       Text="Chef Name" Style="{StaticResource ChefNameStyle}" />
-                        </StackPanel>
-                        <StackPanel Grid.Column="1"
-                                    Grid.Row="1">
-                            <TextBlock HorizontalAlignment="Center"
-                                       Text="yummy 20"
-                                       FontSize="20" />
-                            <TextBlock HorizontalAlignment="Center"
-                                       Text="gourmet 203"
-                                       FontSize="20" />
-                        </StackPanel>
-                        <StackPanel Grid.Column="0"
-                                    Grid.ColumnSpan="2"
-                                    Grid.Row="2">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid Grid.Column="2"
-                          Grid.Row="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/dummy.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid Grid.Column="0"
-                          Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/Logo.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid Grid.Column="1"
-                          Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/Logo.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid Grid.Column="2"
-                          Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/Logo.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                </Grid>
+                <VariableSizedWrapGrid MinHeight="200" VerticalAlignment="Top" Height="400">
+                	<Grid x:Name="CourseItem" Margin="0">
+                		<Grid.RowDefinitions>
+                			<RowDefinition Height="150" />
+                			<RowDefinition Height="50" />
+                		</Grid.RowDefinitions>
+                		<Image Grid.Row="0"
+                			VerticalAlignment="Center"
+                			Stretch="UniformToFill"
+                			Source="Assets/dummy.png" Width="150" Height="150" />
+                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                			<Image
+                				Height="50"
+                				VerticalAlignment="Bottom"
+                				HorizontalAlignment="Left"
+                				Source="Assets/profile_150_user1.png" Width="50" />
+                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                				<TextBlock
+                					VerticalAlignment="Bottom"
+                					Text="Chef Name"
+                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                			</StackPanel>
+                		</StackPanel>
+                		<StackPanel Grid.Row="1">
+                			<TextBlock Text="Category"
+                				FontSize="20" />
+                			<TextBlock Text="Course Title"
+                				FontSize="20" />
+                		</StackPanel>
+                	</Grid>
+                	<Grid x:Name="CourseItem_Copy" Height="200">
+                		<Grid.RowDefinitions>
+                			<RowDefinition Height="150" />
+                			<RowDefinition Height="50" />
+                		</Grid.RowDefinitions>
+                		<Image Grid.Row="0"
+                			VerticalAlignment="Center"
+                			Stretch="UniformToFill"
+                			Source="Assets/dummy.png" Width="150" Height="150" />
+                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                			<Image
+                				Height="50"
+                				VerticalAlignment="Bottom"
+                				HorizontalAlignment="Left"
+                				Source="Assets/profile_150_user1.png" Width="50" />
+                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                				<TextBlock
+                					VerticalAlignment="Bottom"
+                					Text="Chef Name"
+                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                			</StackPanel>
+                		</StackPanel>
+                		<StackPanel Grid.Row="1">
+                			<TextBlock Text="Category"
+                				FontSize="20" />
+                			<TextBlock Text="Course Title"
+                				FontSize="20" />
+                		</StackPanel>
+                	</Grid>
+                	<Grid x:Name="CourseItem_Copy1" Margin="0">
+                		<Grid.RowDefinitions>
+                			<RowDefinition Height="150" />
+                			<RowDefinition Height="50" />
+                		</Grid.RowDefinitions>
+                		<Image Grid.Row="0"
+                			VerticalAlignment="Center"
+                			Stretch="UniformToFill"
+                			Source="Assets/dummy.png" Width="150" Height="150" />
+                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                			<Image
+                				Height="50"
+                				VerticalAlignment="Bottom"
+                				HorizontalAlignment="Left"
+                				Source="Assets/profile_150_user1.png" Width="50" />
+                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                				<TextBlock
+                					VerticalAlignment="Bottom"
+                					Text="Chef Name"
+                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                			</StackPanel>
+                		</StackPanel>
+                		<StackPanel Grid.Row="1">
+                			<TextBlock Text="Category"
+                				FontSize="20" />
+                			<TextBlock Text="Course Title"
+                				FontSize="20" />
+                		</StackPanel>
+                	</Grid>
+                </VariableSizedWrapGrid>
             </StackPanel>
             <StackPanel x:Name="recommended_chef"
                         Grid.ColumnSpan="2"
                         Grid.Column="2"
                         Grid.Row="3"
-                        Margin="0,0,-30,0.143">
+                        Margin="0,0,-30.143,0">
+                <StackPanel MinHeight="10" MaxHeight="100"/>
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                            Text="Recommended Chef" />
                 <VariableSizedWrapGrid Orientation="Horizontal" Margin="0,20,0,0">
@@ -694,136 +681,169 @@
             </StackPanel>
             <StackPanel x:Name="courselist_gourmet"
                         Grid.Row="1"
-                        Grid.Column="3">
+                        Grid.Column="3" Margin="0,0,-0.143,1">
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
-                           Text="I'm Gourmet" />
-                <Grid Margin="0,20,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Grid Tapped="Kitchen_Tapped"
-                          Grid.Column="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/Logo.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" Style="{StaticResource ChefNameStyle}" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/Logo.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                </Grid>
+            		Text="I'm Gourmet" Margin="0,0,-686,0" Height="30" />
+                <StackPanel Margin="0,0,150,0" Orientation="Horizontal">
+                	<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                		<Grid x:Name="CourseItem_Copy4" Margin="0,0,-1,0">
+                			<Grid.RowDefinitions>
+                				<RowDefinition Height="150" />
+                				<RowDefinition Height="50" />
+                			</Grid.RowDefinitions>
+                			<Image Grid.Row="0"
+                				VerticalAlignment="Center"
+                				Stretch="UniformToFill"
+                				Source="Assets/dummy.png" Width="150" Height="150" />
+                			<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                				<Image
+                					Height="50"
+                					VerticalAlignment="Bottom"
+                					HorizontalAlignment="Left"
+                					Source="Assets/profile_150_user1.png" Width="50" />
+                				<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                					<TextBlock
+                						VerticalAlignment="Bottom"
+                						Text="Chef Name"
+                						FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                				</StackPanel>
+                			</StackPanel>
+                			<StackPanel Grid.Row="1">
+                				<TextBlock Text="Category"
+                					FontSize="20" />
+                				<TextBlock Text="Course Title"
+                					FontSize="20" />
+                			</StackPanel>
+                		</Grid>
+                	</Button>
+                	<Grid x:Name="CourseItem_Copy5" Margin="0,0,-1,0">
+                		<Grid.RowDefinitions>
+                			<RowDefinition Height="150" />
+                			<RowDefinition Height="50" />
+                		</Grid.RowDefinitions>
+                		<Image Grid.Row="0"
+                			VerticalAlignment="Center"
+                			Stretch="UniformToFill"
+                			Source="Assets/dummy.png" Width="150" Height="150" />
+                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                			<Image
+                				Height="50"
+                				VerticalAlignment="Bottom"
+                				HorizontalAlignment="Left"
+                				Source="Assets/profile_150_user1.png" Width="50" />
+                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                				<TextBlock
+                					VerticalAlignment="Bottom"
+                					Text="Chef Name"
+                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                			</StackPanel>
+                		</StackPanel>
+                		<StackPanel Grid.Row="1">
+                			<TextBlock Text="Category"
+                				FontSize="20" />
+                			<TextBlock Text="Course Title"
+                				FontSize="20" />
+                		</StackPanel>
+                	</Grid>
+                	<Grid x:Name="CourseItem_Copy6" Margin="0,0,-1,0">
+                		<Grid.RowDefinitions>
+                			<RowDefinition Height="150" />
+                			<RowDefinition Height="50" />
+                		</Grid.RowDefinitions>
+                		<Image Grid.Row="0"
+                			VerticalAlignment="Center"
+                			Stretch="UniformToFill"
+                			Source="Assets/dummy.png" Width="150" Height="150" />
+                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                			<Image
+                				Height="50"
+                				VerticalAlignment="Bottom"
+                				HorizontalAlignment="Left"
+                				Source="Assets/profile_150_user1.png" Width="50" />
+                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                				<TextBlock
+                					VerticalAlignment="Bottom"
+                					Text="Chef Name"
+                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                			</StackPanel>
+                		</StackPanel>
+                		<StackPanel Grid.Row="1">
+                			<TextBlock Text="Category"
+                				FontSize="20" />
+                			<TextBlock Text="Course Title"
+                				FontSize="20" />
+                		</StackPanel>
+                	</Grid>
+                </StackPanel>
             </StackPanel>
 
             <StackPanel x:Name="courselist_chef"
                         Grid.Column="3"
-                        Grid.Row="2">
+                        Grid.Row="2" Margin="0,4,-0.143,1">
 
 
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                            Text="I'm Chef" />
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0"
-                          Tapped="Chef_Table_Tapped">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/Logo.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid Grid.Column="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150" />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0"
-                               VerticalAlignment="Center"
-                               Stretch="UniformToFill"
-                               Source="Assets/Logo.png" />
-                        <Image Grid.Row="0"
-                               Height="50"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Left"
-                               Source="Assets/Logo.png" />
-                        <TextBlock Height="30"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name"
-                                   FontSize="20" />
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Category"
-                                       FontSize="20" />
-                            <TextBlock Text="Course Title"
-                                       FontSize="20" />
-                        </StackPanel>
-                    </Grid>
-                </Grid>
+                <StackPanel Margin="0,0,149.857,0" Orientation="Horizontal">
+                	<Grid x:Name="CourseItem_Copy2" Margin="0">
+                		<Grid.RowDefinitions>
+                			<RowDefinition Height="150" />
+                			<RowDefinition Height="50" />
+                		</Grid.RowDefinitions>
+                		<Image Grid.Row="0"
+                			VerticalAlignment="Center"
+                			Stretch="UniformToFill"
+                			Source="Assets/dummy.png" Width="150" Height="150" />
+                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                			<Image
+                				Height="50"
+                				VerticalAlignment="Bottom"
+                				HorizontalAlignment="Left"
+                				Source="Assets/profile_150_user1.png" Width="50" />
+                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                				<TextBlock
+                					VerticalAlignment="Bottom"
+                					Text="Chef Name"
+                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                			</StackPanel>
+                		</StackPanel>
+                		<StackPanel Grid.Row="1">
+                			<TextBlock Text="Category"
+                				FontSize="20" />
+                			<TextBlock Text="Course Title"
+                				FontSize="20" />
+                		</StackPanel>
+                	</Grid>
+                	<Grid x:Name="CourseItem_Copy3" Margin="0">
+                		<Grid.RowDefinitions>
+                			<RowDefinition Height="150" />
+                			<RowDefinition Height="50" />
+                		</Grid.RowDefinitions>
+                		<Image Grid.Row="0"
+                			VerticalAlignment="Center"
+                			Stretch="UniformToFill"
+                			Source="Assets/dummy.png" Width="150" Height="150" />
+                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                			<Image
+                				Height="50"
+                				VerticalAlignment="Bottom"
+                				HorizontalAlignment="Left"
+                				Source="Assets/profile_150_user1.png" Width="50" />
+                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                				<TextBlock
+                					VerticalAlignment="Bottom"
+                					Text="Chef Name"
+                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                			</StackPanel>
+                		</StackPanel>
+                		<StackPanel Grid.Row="1">
+                			<TextBlock Text="Category"
+                				FontSize="20" />
+                			<TextBlock Text="Course Title"
+                				FontSize="20" />
+                		</StackPanel>
+                	</Grid>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </ScrollViewer>

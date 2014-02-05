@@ -685,7 +685,7 @@
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
             		Text="I'm Gourmet" Margin="0,0,-686,0" Height="30" />
                 <StackPanel Margin="0,0,150,0" Orientation="Horizontal">
-                	<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                	<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Kitchen_Click">
                 		<Grid x:Name="CourseItem_Copy4" Margin="0,0,-1,0">
                 			<Grid.RowDefinitions>
                 				<RowDefinition Height="150" />
@@ -716,64 +716,68 @@
                 			</StackPanel>
                 		</Grid>
                 	</Button>
-                	<Grid x:Name="CourseItem_Copy5" Margin="0,0,-1,0">
-                		<Grid.RowDefinitions>
-                			<RowDefinition Height="150" />
-                			<RowDefinition Height="50" />
-                		</Grid.RowDefinitions>
-                		<Image Grid.Row="0"
-                			VerticalAlignment="Center"
-                			Stretch="UniformToFill"
-                			Source="Assets/dummy.png" Width="150" Height="150" />
-                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
-                			<Image
-                				Height="50"
-                				VerticalAlignment="Bottom"
-                				HorizontalAlignment="Left"
-                				Source="Assets/profile_150_user1.png" Width="50" />
-                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
-                				<TextBlock
+                	<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Kitchen_Click">
+                		<Grid x:Name="CourseItem_Copy7" Margin="0,0,-1,0">
+                			<Grid.RowDefinitions>
+                				<RowDefinition Height="150" />
+                				<RowDefinition Height="50" />
+                			</Grid.RowDefinitions>
+                			<Image Grid.Row="0"
+                				VerticalAlignment="Center"
+                				Stretch="UniformToFill"
+                				Source="Assets/dummy.png" Width="150" Height="150" />
+                			<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                				<Image
+                					Height="50"
                 					VerticalAlignment="Bottom"
-                					Text="Chef Name"
-                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                					HorizontalAlignment="Left"
+                					Source="Assets/profile_150_user1.png" Width="50" />
+                				<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                					<TextBlock
+                						VerticalAlignment="Bottom"
+                						Text="Chef Name"
+                						FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                				</StackPanel>
                 			</StackPanel>
-                		</StackPanel>
-                		<StackPanel Grid.Row="1">
-                			<TextBlock Text="Category"
-                				FontSize="20" />
-                			<TextBlock Text="Course Title"
-                				FontSize="20" />
-                		</StackPanel>
-                	</Grid>
-                	<Grid x:Name="CourseItem_Copy6" Margin="0,0,-1,0">
-                		<Grid.RowDefinitions>
-                			<RowDefinition Height="150" />
-                			<RowDefinition Height="50" />
-                		</Grid.RowDefinitions>
-                		<Image Grid.Row="0"
-                			VerticalAlignment="Center"
-                			Stretch="UniformToFill"
-                			Source="Assets/dummy.png" Width="150" Height="150" />
-                		<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
-                			<Image
-                				Height="50"
-                				VerticalAlignment="Bottom"
-                				HorizontalAlignment="Left"
-                				Source="Assets/profile_150_user1.png" Width="50" />
-                			<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
-                				<TextBlock
+                			<StackPanel Grid.Row="1">
+                				<TextBlock Text="Category"
+                					FontSize="20" />
+                				<TextBlock Text="Course Title"
+                					FontSize="20" />
+                			</StackPanel>
+                		</Grid>
+                	</Button>
+                	<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Kitchen_Click">
+                		<Grid x:Name="CourseItem_Copy8" Margin="0,0,-1,0">
+                			<Grid.RowDefinitions>
+                				<RowDefinition Height="150" />
+                				<RowDefinition Height="50" />
+                			</Grid.RowDefinitions>
+                			<Image Grid.Row="0"
+                				VerticalAlignment="Center"
+                				Stretch="UniformToFill"
+                				Source="Assets/dummy.png" Width="150" Height="150" />
+                			<StackPanel Margin="0,100,0,0" Orientation="Horizontal">
+                				<Image
+                					Height="50"
                 					VerticalAlignment="Bottom"
-                					Text="Chef Name"
-                					FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                					HorizontalAlignment="Left"
+                					Source="Assets/profile_150_user1.png" Width="50" />
+                				<StackPanel Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#79000000">
+                					<TextBlock
+                						VerticalAlignment="Bottom"
+                						Text="Chef Name"
+                						FontSize="20" Width="100" MaxLines="1" HorizontalAlignment="Left" Foreground="#FFFBFBFB" />
+                				</StackPanel>
                 			</StackPanel>
-                		</StackPanel>
-                		<StackPanel Grid.Row="1">
-                			<TextBlock Text="Category"
-                				FontSize="20" />
-                			<TextBlock Text="Course Title"
-                				FontSize="20" />
-                		</StackPanel>
-                	</Grid>
+                			<StackPanel Grid.Row="1">
+                				<TextBlock Text="Category"
+                					FontSize="20" />
+                				<TextBlock Text="Course Title"
+                					FontSize="20" />
+                			</StackPanel>
+                		</Grid>
+                	</Button>
                 </StackPanel>
             </StackPanel>
 

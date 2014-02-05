@@ -106,12 +106,7 @@ namespace Learnch
         {
             this.Frame.Navigate(typeof(CoursePage));
         }
-
-        private void Kitchen_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ChefKitchenPage));
-        }
-
+		
 
         private void Chef_Table_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -121,6 +116,11 @@ namespace Learnch
         private void btnAll_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CategoryPage));
+        }
+
+        private void Kitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ChefKitchenPage));
         }
     }
 }

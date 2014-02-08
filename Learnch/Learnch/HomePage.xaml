@@ -515,8 +515,7 @@
             <StackPanel x:Name="courselist_gourmet"
                         Grid.Row="1"
                         Grid.Column="3" Margin="0,0,-0.143,1">
-                <TextBlock Style="{StaticResource TextSubTitleStytle}"
-            		Text="Course" Margin="0,0,-686,0" Height="30" FontWeight="Thin" />
+                <TextBlock Style="{StaticResource TextSubTitleStytle}" Margin="0,0,-686,0" Height="30" FontWeight="Thin" Text="Course" />
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                 	Text="Learning" Margin="0,0,0,8" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Thin" >
                 	<TextBlock.Foreground>

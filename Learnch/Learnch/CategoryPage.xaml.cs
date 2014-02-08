@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.StartScreen;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -23,7 +24,7 @@ namespace Learnch
     /// </summary>
     public sealed partial class CategoryPage : Page
     {
-
+        public const string appbarTileId = "SecondaryTile.AppBar";
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -103,9 +104,52 @@ namespace Learnch
 
         private void Kitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-        	this.Frame.Navigate(typeof(ChefKitchenPage));
+            this.Frame.Navigate(typeof(ChefKitchenPage));
         }
 
         #endregion
+
+        private async void AppBarPin_Click(object sender, RoutedEventArgs e)
+        {
+
+            FrameworkElement pinElement = (FrameworkElement)sender;
+            Windows.UI.Xaml.Media.GeneralTransform buttonTransform = pinElement.TransformToVisual(null);
+            Windows.Foundation.Point point = buttonTransform.TransformPoint(new Point());
+            Windows.Foundation.Rect rect = new Rect(point, new Size(pinElement.ActualWidth, pinElement.ActualHeight));
+
+            if (SecondaryTile.Exists(appbarTileId))
+            {
+
+                SecondaryTile secondaryTile = new SecondaryTile(appbarTileId);
+                bool isUnpinned = await secondaryTile.RequestDeleteForSelectionAsync(rect, Windows.UI.Popups.Placement.Above);
+
+                ToggleAppBarButton((Button) sender, isUnpinned);
+            }
+            else
+            {
+                Uri logo = new Uri("ms-appx:///Assets/badge_01.png");
+                string tileActivationArguments = appbarTileId + " was pinned at " + DateTime.Now.ToLocalTime().ToString();
+
+                SecondaryTile secondaryTile = new SecondaryTile(appbarTileId,
+                                                                "Secondary tile pinned via AppBar",
+                                                                tileActivationArguments,
+                                                                logo, 
+                                                                TileSize.Square150x150);
+
+                secondaryTile.VisualElements.ForegroundText = ForegroundText.Dark;
+                secondaryTile.VisualElements.Wide310x150Logo = new Uri("ms-appx:///Assets/badge_01.png");
+                secondaryTile.VisualElements.Square70x70Logo = new Uri("ms-appx:///Assets/badge_02.png");
+                secondaryTile.VisualElements.Square310x310Logo = new Uri("ms-appx:///Assets/badge_03.png");
+
+                bool isPinned = await secondaryTile.RequestCreateForSelectionAsync(rect, Windows.UI.Popups.Placement.Above);
+
+                ToggleAppBarButton((Button)sender, !isPinned);
+            }
+        }
+
+        private void ToggleAppBarButton(Button sender, bool showPinButton)
+        {
+            sender.Style = (showPinButton) ? (this.Resources["PinAppBarButtonStyle"] as Style) : (this.Resources["UnpinAppBarButtonStyle"] as Style);
+        }
     }
 }

@@ -388,7 +388,7 @@
                     </Button>
                     <Button HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            Style="{StaticResource BtnAppbar_Nav}">
+                            Style="{StaticResource BtnAppbar_Nav}" Click="ChefKitchen_Click">
                         <StackPanel>
                             <Image Source="Assets/btn_appbar_kitchin.png"
                                    HorizontalAlignment="Center"

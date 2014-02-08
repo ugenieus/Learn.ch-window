@@ -13,34 +13,35 @@
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Chef Kitchen</x:String>
         <Style x:Key="TextSubTitleStytle"
-        	TargetType="TextBlock">
-        	<Setter Property="FontSize"
-        		Value="34.667" />
-        	<Setter Property="FontFamily"
-        		Value="{ThemeResource ContentControlThemeFontFamily}" />
-        	<Setter Property="SelectionHighlightColor"
-        		Value="{ThemeResource TextSelectionHighlightColorThemeBrush}" />
-        	<Setter Property="TextTrimming"
-        		Value="CharacterEllipsis" />
-        	<Setter Property="TextWrapping"
-        		Value="Wrap" />
-        	<Setter Property="Typography.StylisticSet20"
-        		Value="True" />
-        	<Setter Property="Typography.DiscretionaryLigatures"
-        		Value="True" />
-        	<Setter Property="Typography.CaseSensitiveForms"
-        		Value="True" />
-        	<Setter Property="LineHeight"
-        		Value="30" />
-        	<Setter Property="LineStackingStrategy"
-        		Value="BlockLineHeight" />
-        	<Setter Property="TextLineBounds"
-        		Value="TrimToBaseline" />
-        	<Setter Property="OpticalMarginAlignment"
-        		Value="TrimSideBearings" />
-        	<Setter Property="Foreground"
-        		Value="#FF8D8D8D" />
+               TargetType="TextBlock">
+            <Setter Property="FontSize"
+                    Value="34.667" />
+            <Setter Property="FontFamily"
+                    Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="SelectionHighlightColor"
+                    Value="{ThemeResource TextSelectionHighlightColorThemeBrush}" />
+            <Setter Property="TextTrimming"
+                    Value="CharacterEllipsis" />
+            <Setter Property="TextWrapping"
+                    Value="Wrap" />
+            <Setter Property="Typography.StylisticSet20"
+                    Value="True" />
+            <Setter Property="Typography.DiscretionaryLigatures"
+                    Value="True" />
+            <Setter Property="Typography.CaseSensitiveForms"
+                    Value="True" />
+            <Setter Property="LineHeight"
+                    Value="30" />
+            <Setter Property="LineStackingStrategy"
+                    Value="BlockLineHeight" />
+            <Setter Property="TextLineBounds"
+                    Value="TrimToBaseline" />
+            <Setter Property="OpticalMarginAlignment"
+                    Value="TrimSideBearings" />
+            <Setter Property="Foreground"
+                    Value="#FF8D8D8D" />
         </Style>
+        
     </Page.Resources>
 
     <!--
@@ -64,19 +65,21 @@
             </Grid.ChildrenTransitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="115.714" />
-                <ColumnDefinition Width="266"/>
+                <ColumnDefinition Width="266" />
                 <ColumnDefinition Width="77" />
-                <ColumnDefinition Width="Auto" MinWidth="545"/>
-                <ColumnDefinition Width="88"/>
-                <ColumnDefinition Width="828"/>
+                <ColumnDefinition Width="Auto"
+                                  MinWidth="545" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="828" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="140" />
                 <RowDefinition Height="656*" />
-                <RowDefinition Height="61*"/>
+                <RowDefinition Height="61*" />
             </Grid.RowDefinitions>
             <Grid Grid.ColumnSpan="6"
-                  Grid.Column="0" Margin="0,0,-0.286,0">
+                  Grid.Column="0"
+                  Margin="0,0,-0.286,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120" />
                     <ColumnDefinition Width="*" />
@@ -84,16 +87,11 @@
                 <Button x:Name="backButton"
                         Margin="39,59,39,0"
                         Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
-                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        Style="{StaticResource BackButtonStyle}"
                         VerticalAlignment="Top"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button" Background="#B3B6B6B6" CompositeMode="{StaticResource ElementCompositeMode1}" >
-                	<Button.Foreground>
-                		<SolidColorBrush Color="{StaticResource yellow}"/>
-                	</Button.Foreground>
-                	<Button Content="Button" Height="100" Style="{StaticResource BackButton}" Width="100" Foreground="#FF79BC9F" ContentTemplate="{StaticResource NavigationBackButtonNormalStyle}"/>
-                </Button>
+                        AutomationProperties.ItemType="Navigation Button" />
                 <TextBlock x:Name="pageTitle"
                            Text="{StaticResource AppName}"
                            Style="{StaticResource HeaderTextBlockStyle}"
@@ -101,140 +99,305 @@
                            IsHitTestVisible="false"
                            TextWrapping="NoWrap"
                            VerticalAlignment="Bottom"
-                           Margin="0,0,30,40" >
-                	<TextBlock.Foreground>
-                		<SolidColorBrush Color="{StaticResource yellow}"/>
-                	</TextBlock.Foreground>
+                           Margin="0,0,30,40">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource yellow}" />
+                    </TextBlock.Foreground>
                 </TextBlock>
             </Grid>
             <StackPanel Grid.Column="1"
                         Background="#FFFBFBFB"
-                        Grid.Row="1" Margin="8.286,0,7.714,0" Grid.RowSpan="2">
+                        Grid.Row="1"
+                        Margin="8.286,0,7.714,0"
+                        Grid.RowSpan="2">
                 <TextBlock Text="Profile"
-            		FontSize="34.667" Style="{StaticResource titleTextGray}" Margin="0" FontWeight="Thin" />
-                <Image Source="Assets/profile_150_user1.png" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                           FontSize="34.667"
+                           Style="{StaticResource titleTextGray}"
+                           Margin="0"
+                           FontWeight="Thin" />
+                <Image Source="Assets/profile_150_user1.png"
+                       Width="150"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top" />
                 <TextBlock FontSize="21.333"
-                           Text="Olivia Shewerzki" Margin="0,10,0,0" CharacterSpacing="-20" FontWeight="Thin" >
-                	<TextBlock.Foreground>
-                		<SolidColorBrush Color="#FF3C3C3C"/>
-                	</TextBlock.Foreground>
+                           Text="Olivia Shewerzki"
+                           Margin="0,10,0,0"
+                           CharacterSpacing="-20"
+                           FontWeight="Thin">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="#FF3C3C3C" />
+                    </TextBlock.Foreground>
                 </TextBlock>
                 <TextBlock FontSize="16"
-                           Text="Olivia_Sh@hotmail.com" >
-                	<TextBlock.Foreground>
-                		<SolidColorBrush Color="{StaticResource lightGray}"/>
-                	</TextBlock.Foreground>
+                           Text="Olivia_Sh@hotmail.com">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource lightGray}" />
+                    </TextBlock.Foreground>
                 </TextBlock>
-                <TextBlock
-                           Text="About"
-                           Margin="0,20,0,0" Style="{StaticResource textGreenMiddle}" FontSize="{StaticResource textMiddleSize}" FontWeight="Thin" Foreground="#FF3C3C3C" />
+                <TextBlock Text="About"
+                           Margin="0,20,0,0"
+                           Style="{StaticResource textGreenMiddle}"
+                           FontSize="{StaticResource textMiddleSize}"
+                           FontWeight="Thin"
+                           Foreground="#FF3C3C3C" />
                 <TextBlock TextWrapping="WrapWholeWords"
                            FontSize="16"
-                           Text="Olivia is a multi-disciplinary designer passionate about producing creative projects of the highest quality across digital, print, branding and interactive media" Height="118" MaxLines="6" FontStretch="Undefined" CharacterSpacing="10" >
-                	<TextBlock.Foreground>
-                		<SolidColorBrush Color="{StaticResource lightGray}"/>
-                	</TextBlock.Foreground>
+                           Text="Olivia is a multi-disciplinary designer passionate about producing creative projects of the highest quality across digital, print, branding and interactive media"
+                           Height="118"
+                           MaxLines="6"
+                           FontStretch="Undefined"
+                           CharacterSpacing="10">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource lightGray}" />
+                    </TextBlock.Foreground>
                 </TextBlock>
-                <StackPanel Margin="0,80,0,0" Orientation="Horizontal">
-                	<TextBlock Margin="0,0,-1,0"
-                		FontSize="{StaticResource textMiddleSize}"
-                		Text="Course" Style="{StaticResource textGreenMiddle}" VerticalAlignment="Center" FontWeight="Thin" Foreground="#FF3C3C3C" />
-                	<TextBlock Margin="10,0,0,0"
-                		FontSize="16"
-                		Text="3" VerticalAlignment="Center" >
-                		<TextBlock.Foreground>
-                			<SolidColorBrush Color="{StaticResource lightGray}"/>
-                		</TextBlock.Foreground>
-                	</TextBlock>
+                <StackPanel Margin="0,80,0,0"
+                            Orientation="Horizontal">
+                    <TextBlock Margin="0,0,-1,0"
+                               FontSize="{StaticResource textMiddleSize}"
+                               Text="Course"
+                               Style="{StaticResource textGreenMiddle}"
+                               VerticalAlignment="Center"
+                               FontWeight="Thin"
+                               Foreground="#FF3C3C3C" />
+                    <TextBlock Margin="10,0,0,0"
+                               FontSize="16"
+                               Text="3"
+                               VerticalAlignment="Center">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource lightGray}" />
+                        </TextBlock.Foreground>
+                    </TextBlock>
                 </StackPanel>
-                <StackPanel Margin="0" Orientation="Horizontal">
-                	<TextBlock Margin="0,0,-1,0"
-                		FontSize="{StaticResource textMiddleSize}"
-                		Text="Gourmet" Style="{StaticResource textGreenMiddle}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Thin" Foreground="#FF3C3C3C" />
-                	<TextBlock Margin="10,0,0,0"
-                		FontSize="16"
-                		Text="1820" VerticalAlignment="Center" >
-                		<TextBlock.Foreground>
-                			<SolidColorBrush Color="{StaticResource lightGray}"/>
-                		</TextBlock.Foreground>
-                	</TextBlock>
+                <StackPanel Margin="0"
+                            Orientation="Horizontal">
+                    <TextBlock Margin="0,0,-1,0"
+                               FontSize="{StaticResource textMiddleSize}"
+                               Text="Gourmet"
+                               Style="{StaticResource textGreenMiddle}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontWeight="Thin"
+                               Foreground="#FF3C3C3C" />
+                    <TextBlock Margin="10,0,0,0"
+                               FontSize="16"
+                               Text="1820"
+                               VerticalAlignment="Center">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource lightGray}" />
+                        </TextBlock.Foreground>
+                    </TextBlock>
                 </StackPanel>
 
 
             </StackPanel>
-            
+
             <StackPanel Grid.Row="1"
-                        Grid.Column="3" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <TextBlock Style="{StaticResource TextSubTitleStytle}" Margin="0,0,-721,0" Height="30" FontWeight="Thin" Text="Course" />
+                        Grid.Column="3"
+                        Margin="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
-                	Text="Learning" Margin="0,0,0,8" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Thin" >
-                	<TextBlock.Foreground>
-                		<SolidColorBrush Color="{StaticResource yellow}"/>
-                	</TextBlock.Foreground>
+                           Margin="0,0,-721,0"
+                           Height="30"
+                           FontWeight="Thin"
+                           Text="Course" />
+                <TextBlock Style="{StaticResource TextSubTitleStytle}"
+                           Text="Learning"
+                           Margin="0,0,0,8"
+                           FontSize="20"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           FontWeight="Thin">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource yellow}" />
+                    </TextBlock.Foreground>
                 </TextBlock>
-                <VariableSizedWrapGrid HorizontalAlignment="Left" Orientation="Horizontal">
-                	<Button x:Name="btn_course_thumb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
-                		<Image x:Name="aa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_01.png"/>
-                	</Button>
-                	<Button x:Name="btn_course_thumb_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
-                		<Image x:Name="aa1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_02.png"/>
-                	</Button>
-                	<Button x:Name="btn_course_thumb_Copy1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
-                		<Image x:Name="aa2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_03.png"/>
-                	</Button>
+                <VariableSizedWrapGrid HorizontalAlignment="Left"
+                                       Orientation="Horizontal">
+                    <Button x:Name="btn_course_thumb"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Margin="0"
+                            Style="{StaticResource BtnThumb_Course}"
+                            Click="Kitchen_Click"
+                            BorderThickness="0,0,10,0">
+                        <Image x:Name="aa"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Source="Assets/thumb_learning_course_01.png" />
+                    </Button>
+                    <Button x:Name="btn_course_thumb_Copy"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Margin="0"
+                            Style="{StaticResource BtnThumb_Course}"
+                            BorderThickness="0,0,10,0">
+                        <Image x:Name="aa1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Source="Assets/thumb_learning_course_02.png" />
+                    </Button>
+                    <Button x:Name="btn_course_thumb_Copy1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Margin="0"
+                            Style="{StaticResource BtnThumb_Course}"
+                            BorderThickness="0,0,10,0">
+                        <Image x:Name="aa2"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Source="Assets/thumb_learning_course_03.png" />
+                    </Button>
                 </VariableSizedWrapGrid>
-                <StackPanel Height="5" MinHeight="3" MaxHeight="300"/>
+                <StackPanel Height="5"
+                            MinHeight="3"
+                            MaxHeight="300" />
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
-                	Text="Serving" Margin="0,0,0,8" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Thin" >
-                	<TextBlock.Foreground>
-                		<SolidColorBrush Color="{StaticResource yellow}"/>
-                	</TextBlock.Foreground>
+                           Text="Serving"
+                           Margin="0,0,0,8"
+                           FontSize="20"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           FontWeight="Thin">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource yellow}" />
+                    </TextBlock.Foreground>
                 </TextBlock>
-                <VariableSizedWrapGrid HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Top">
-                	<Button x:Name="btn_course_thumb1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
-                		<Image x:Name="aa3" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_mycourse_01.png"/>
-                	</Button>
-                	<Button x:Name="btn_course_thumb_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0" Click="ChefTablePage">
-                		<Image x:Name="aa4" Source="Assets/btn_make_course.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                	</Button>
+                <VariableSizedWrapGrid HorizontalAlignment="Left"
+                                       Orientation="Horizontal"
+                                       VerticalAlignment="Top">
+                    <Button x:Name="btn_course_thumb1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Margin="0"
+                            Style="{StaticResource BtnThumb_Course}"
+                            Click="Kitchen_Click"
+                            BorderThickness="0,0,10,0">
+                        <Image x:Name="aa3"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Source="Assets/thumb_mycourse_01.png" />
+                    </Button>
+                    <Button x:Name="btn_course_thumb_Copy2"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Margin="0"
+                            Style="{StaticResource BtnThumb_Course}"
+                            BorderThickness="0,0,10,0"
+                            Click="ChefTablePage">
+                        <Image x:Name="aa4"
+                               Source="Assets/btn_make_course.png"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top" />
+                    </Button>
                 </VariableSizedWrapGrid>
             </StackPanel>
-            <StackPanel Grid.Column="4" Grid.RowSpan="3" Margin="3.286,0,-495.286,0" Background="#ff474c4a" Grid.ColumnSpan="2"/>
+            <StackPanel Grid.Column="4"
+                        Grid.RowSpan="3"
+                        Margin="3.286,0,-495.286,0"
+                        Background="#ff474c4a"
+                        Grid.ColumnSpan="2" />
 
             <StackPanel Grid.Column="5"
-                        Grid.Row="1" Margin="0.286,0,-0.286,0">
-                <TextBlock x:Name="mission_badge" Text="Mission Badges"
-                           FontSize="34.667" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
-                <VariableSizedWrapGrid Margin="0" Height="200" MinHeight="190" MaxHeight="300">
-                	<Image Source="Assets/badge_01.png" Height="90" ToolTipService.ToolTip="Best Score" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_02.png" Height="90" ToolTipService.ToolTip="2014 Learncher of the Year" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_07.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_03.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_05.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                        Grid.Row="1"
+                        Margin="0.286,0,-0.286,0">
+                <TextBlock x:Name="mission_badge"
+                           Text="Mission Badges"
+                           FontSize="34.667"
+                           Style="{StaticResource titleTextGray}"
+                           Foreground="White"
+                           FontWeight="Thin" />
+                <VariableSizedWrapGrid Margin="0"
+                                       Height="200"
+                                       MinHeight="190"
+                                       MaxHeight="300">
+                    <Image Source="Assets/badge_01.png"
+                           Height="90"
+                           ToolTipService.ToolTip="Best Score"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_02.png"
+                           Height="90"
+                           ToolTipService.ToolTip="2014 Learncher of the Year"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_07.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_03.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_05.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
                 </VariableSizedWrapGrid>
-                <StackPanel Height="40" MinHeight="10" MaxHeight="100"/>
-                <TextBlock x:Name="course_badge" Text="Course Badges"
-                           FontSize="34.667" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
-                <VariableSizedWrapGrid Height="200" Margin="0,0,10,10">
-                	<Image Source="Assets/badge_course_01.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_course_02.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_course_03.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
-                	<Image Source="Assets/badge_defualt.png" Height="90" Margin="0,0,10,10" />
+                <StackPanel Height="40"
+                            MinHeight="10"
+                            MaxHeight="100" />
+                <TextBlock x:Name="course_badge"
+                           Text="Course Badges"
+                           FontSize="34.667"
+                           Style="{StaticResource titleTextGray}"
+                           Foreground="White"
+                           FontWeight="Thin" />
+                <VariableSizedWrapGrid Height="200"
+                                       Margin="0,0,10,10">
+                    <Image Source="Assets/badge_course_01.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_course_02.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_course_03.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
+                    <Image Source="Assets/badge_defualt.png"
+                           Height="90"
+                           Margin="0,0,10,10" />
                 </VariableSizedWrapGrid>
             </StackPanel>
 

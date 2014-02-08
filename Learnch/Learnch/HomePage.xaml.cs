@@ -120,12 +120,24 @@ namespace Learnch
 
         private void Kitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(ChefKitchenPage));
+            this.Frame.Navigate(typeof(CoursePage));
         }
 
-        private void sss(object sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
+ 
+
+        private void BtnChef_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+          	this.Frame.Navigate(typeof(ChefTablePage));
+        }
+
+        private void ChefTablePage(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	 this.Frame.Navigate(typeof(ChefTablePage));
+        }
+
+        private void ChefKitchenPage(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	this.Frame.Navigate(typeof(ChefKitchenPage));
         }
     }
 }

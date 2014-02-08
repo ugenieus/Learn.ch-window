@@ -59,19 +59,15 @@
             </Grid>
             <StackPanel Orientation="Horizontal"
                         Grid.Row="1"
-                        Margin="0">
-
-                <ToggleSwitch Header="ToggleSwitch"
-                              OnContent="On"
-                              OffContent="Off" />
-                <ComboBox Width="120"
-                          Height="40">
-                    <x:String>Item 1</x:String>
-                    <x:String>Item 2</x:String>
-                    <x:String>Item 3</x:String>
+                        Margin="120,0,0,0" VerticalAlignment="Top">
+                <ToggleButton Content="Course" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsChecked="True" Width="100" Height="40"/>
+                <ToggleButton Content="Video" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsChecked="False" Width="100" Height="40"/>
+                <ComboBox Width="150"
+                          Height="40" Margin="20,24,0,23" HorizontalAlignment="Left">
+                	<x:String>Sort by Newest</x:String>
+                	<x:String>Sort by Gourmet Number</x:String>
+                	<x:String>Item 3</x:String>
                 </ComboBox>
-                <ToggleButton Content="ToggleButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                <ToggleButton Content="ToggleButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
             <VariableSizedWrapGrid
                                    Grid.Row="2"

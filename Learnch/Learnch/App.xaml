@@ -374,13 +374,6 @@
 													</DiscreteObjectKeyFrame.Value>
 												</DiscreteObjectKeyFrame>
 											</ObjectAnimationUsingKeyFrames>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush)" Storyboard.TargetName="Border">
-												<DiscreteObjectKeyFrame KeyTime="0">
-													<DiscreteObjectKeyFrame.Value>
-														<SolidColorBrush Color="#FFC2F1E0"/>
-													</DiscreteObjectKeyFrame.Value>
-												</DiscreteObjectKeyFrame>
-											</ObjectAnimationUsingKeyFrames>
 										</Storyboard>
 									</VisualState>
 									<VisualState x:Name="Disabled">

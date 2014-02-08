@@ -109,12 +109,24 @@
         							<VisualState x:Name="Normal"/>
         							<VisualState x:Name="PointerOver">
         								<Storyboard>
-        									<ColorAnimation Duration="0" To="#9E66A88B" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Border" d:IsOptimized="True"/>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0">
+        											<DiscreteObjectKeyFrame.Value>
+        												<SolidColorBrush Color="#7EECAA1E"/>
+        											</DiscreteObjectKeyFrame.Value>
+        										</DiscreteObjectKeyFrame>
+        									</ObjectAnimationUsingKeyFrames>
         								</Storyboard>
         							</VisualState>
         							<VisualState x:Name="Pressed">
         								<Storyboard>
-        									<ColorAnimation Duration="0" To="#FF66A88B" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Border" d:IsOptimized="True"/>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0">
+        											<DiscreteObjectKeyFrame.Value>
+        												<SolidColorBrush Color="#FFECAA1E"/>
+        											</DiscreteObjectKeyFrame.Value>
+        										</DiscreteObjectKeyFrame>
+        									</ObjectAnimationUsingKeyFrames>
         								</Storyboard>
         							</VisualState>
         							<VisualState x:Name="Disabled">
@@ -229,34 +241,31 @@
         <x:Double x:Key="MenuMaxHeight">80</x:Double>
     </Page.Resources>
     <Page.TopAppBar>
-        <AppBar Margin="0,0,0.429,-53.857">
+        <AppBar Margin="0,0,0,-148" Background="#E2FFFFFF">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*" />
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
-                <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100">
-                    <Button HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"
-                            Background="Transparent">
-                        <Button.Content>
-                            <Image Source="Assets/btn_appbar_home.png" />
-                        </Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                    <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BtnAppbar_Nav}">
+                    	<StackPanel>
+                    		<Image Source="Assets/btn_appbar_home.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" />
+                    		<TextBlock TextWrapping="Wrap" Text="learnch home" TextAlignment="Center" FontSize="21.333" CharacterSpacing="-50" Foreground="#FF6C6C6C" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="130"/>
+                    	</StackPanel>
                     </Button>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal"
-                            Grid.Column="1"
-                            HorizontalAlignment="Right">
-                    <AppBarButton x:Uid="Add"
-                                  Icon="Add"
-                                  Label="Add" />
-                    <AppBarButton x:Uid="Remove"
-                                  Icon="Remove"
-                                  Label="Remove" />
-                    <AppBarSeparator />
-                    <AppBarButton x:Uid="Delete"
-                                  Icon="Delete"
-                                  Label="Delete" />
+                    <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BtnAppbar_Nav}">
+                    	<StackPanel>
+                    		<Image Source="Assets/btn_appbar_kitchin.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" />
+                    		<TextBlock TextWrapping="Wrap" Text="My Kitchen" TextAlignment="Center" FontSize="21.333" CharacterSpacing="-50" Foreground="#FF6C6C6C" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="130"/>
+                    	</StackPanel>
+                    </Button>
+                    <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource BtnAppbar_Nav}">
+                    	<StackPanel>
+                    		<Image Source="Assets/btn_appbar_make_course.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" />
+                    		<TextBlock TextWrapping="Wrap" Text="Make Course" TextAlignment="Center" FontSize="21.333" CharacterSpacing="-50" Foreground="#FF6C6C6C" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="130"/>
+                    	</StackPanel>
+                    </Button>
                 </StackPanel>
             </Grid>
         </AppBar>
@@ -313,8 +322,8 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="34" />
                 <ColumnDefinition Width="290" />
-                <ColumnDefinition Width="685" />
-                <ColumnDefinition Width="Auto" MinWidth="480" />
+                <ColumnDefinition Width="642" />
+                <ColumnDefinition Width="Auto" MinWidth="538" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -324,8 +333,11 @@
             </Grid.RowDefinitions>
             <StackPanel Margin="-66,0,0,0"
                         Grid.RowSpan="4"
-                        Background="#FFFFC834"
-                        Grid.ColumnSpan="2" />
+                        Grid.ColumnSpan="2" >
+            	<StackPanel.Background>
+            		<SolidColorBrush Color="{StaticResource yellow}"/>
+            	</StackPanel.Background>
+            </StackPanel>
             <StackPanel Grid.ColumnSpan="2" Margin="0" Orientation="Vertical" Grid.RowSpan="4">
             	<Image Source="Assets/learnch_logo.png" Width="157" VerticalAlignment="Top" Margin="0,40,0,0"/>
             	<StackPanel x:Name="menu_list"
@@ -335,7 +347,7 @@
             		</StackPanel.RenderTransform>
             		<Image Source="Assets/main_menu.png"
             			Stretch="None"
-            			Height="46" />
+            			Height="46" Canvas.ZIndex="200" HorizontalAlignment="Center" Margin="71,0" />
             		<Button x:Name="btnAll"
             			HorizontalAlignment="Stretch"
             			VerticalAlignment="Stretch"
@@ -343,8 +355,8 @@
             			Foreground="{x:Null}"
             			BorderBrush="{x:Null}"
             			Background="{x:Null}"
-            			Click="btnAll_Click"
-            			Height="40" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40" Margin="0,-5,0,0">
+            			Click="Category_Click"
+            			Height="40" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40" Margin="0,-10,0,0">
             			<TextBlock Text="All"
             				Style="{StaticResource CategoryTextStyle}"
             				Margin="0,-10,0,0"
@@ -353,7 +365,7 @@
             				FontWeight="Thin"
             				FontSize="21.333" />
             		</Button>
-            		<Button x:Name="btnTach" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="40" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40">
+            		<Button x:Name="btnTach" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource btnMenuItem}" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="40" MaxHeight="{StaticResource MenuMaxHeight}" MinHeight="40" Click="Category_Click">
             			<TextBlock Text="Technology"
             				Style="{StaticResource CategoryTextStyle}" Margin="0,-10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Thin" FontSize="21.333" />
             		</Button>
@@ -396,7 +408,7 @@
 
             	</StackPanel>
             </StackPanel>
-            <StackPanel x:Name="recommanded" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Margin="30,0,0,0">
+            <StackPanel x:Name="recommanded" Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Margin="40,0,0,0">
             	<StackPanel x:Name="recommended_course"
             		MinHeight="203" VerticalAlignment="Top">
             		<TextBlock Style="{StaticResource TextSubTitleStytle}"
@@ -410,14 +422,14 @@
             		<StackPanel MinHeight="10" MaxHeight="100"/>
             		<TextBlock Style="{StaticResource TextSubTitleStytle}"
             			Text="Recommended Chef" FontWeight="Thin" />
-            		<VariableSizedWrapGrid Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52">
-            			<Button x:Name="BtnChef" HorizontalAlignment="Left" Style="{StaticResource BtnThumb_Course}" Margin="0,0,10,0" Click="ChefKitchenPage" VerticalAlignment="Top">
-            				<Image Source="Assets/thumb_chef_01.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            		<VariableSizedWrapGrid Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" MaxHeight="50">
+            			<Button x:Name="BtnChef" HorizontalAlignment="Left" Style="{StaticResource BtnThumb_Course}" Margin="0,0,10,0" Click="Course_Click" VerticalAlignment="Top">
+            				<Image Source="Assets/thumb_chef_01.png" VerticalAlignment="Center" HorizontalAlignment="Center" Height="38"/>
             			</Button>
-            			<Button x:Name="BtnChef_Copy" HorizontalAlignment="Left" Style="{StaticResource BtnThumb_Course}" Margin="0,0,10,0" Click="ChefKitchenPage">
-            				<Image Source="Assets/thumb_chef_02.png"/>
+            			<Button x:Name="BtnChef_Copy" HorizontalAlignment="Left" Style="{StaticResource BtnThumb_Course}" Margin="0,0,10,0" Click="ChefKitchen_Click">
+            				<Image Source="Assets/thumb_chef_02.png" Height="38"/>
             			</Button>
-            			<Button x:Name="BtnChef1" HorizontalAlignment="Left" Style="{StaticResource BtnThumb_Course}" Margin="0,0,10,0" Click="ChefKitchenPage" VerticalAlignment="Top">
+            			<Button x:Name="BtnChef1" HorizontalAlignment="Left" Style="{StaticResource BtnThumb_Course}" Margin="0,0,10,0" Click="ChefKitchen_Click" VerticalAlignment="Top">
             				<Image Source="Assets/thumb_chef_03.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             			</Button>
             		</VariableSizedWrapGrid>
@@ -430,14 +442,14 @@
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                 	Text="Learning" Margin="0,0,0,8" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Thin" >
                 	<TextBlock.Foreground>
-                		<SolidColorBrush Color="{StaticResource green}"/>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
                 	</TextBlock.Foreground>
                 </TextBlock>
                 <VariableSizedWrapGrid HorizontalAlignment="Left" Orientation="Horizontal">
-                	<Button x:Name="btn_course_thumb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click">
+                	<Button x:Name="btn_course_thumb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Click="Course_Click">
                 		<Image x:Name="aa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_01.png"/>
                 	</Button>
-                	<Button x:Name="btn_course_thumb_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click">
+                	<Button x:Name="btn_course_thumb_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Click="Course_Click">
                 		<Image x:Name="aa1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_02.png"/>
                 	</Button>
                 	<Button x:Name="btn_course_thumb_Copy1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}">
@@ -454,14 +466,14 @@
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                            Text="serving" FontSize="20" FontWeight="Thin" HorizontalAlignment="Left" Margin="0,0,0,8" >
                 	<TextBlock.Foreground>
-                		<SolidColorBrush Color="{StaticResource green}"/>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
                 	</TextBlock.Foreground>
                 </TextBlock>
                 <VariableSizedWrapGrid HorizontalAlignment="Left" Orientation="Horizontal">
-                	<Button x:Name="btn_course_thumb1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click">
+                	<Button x:Name="btn_course_thumb1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Click="Course_Click">
                 		<Image x:Name="aa3" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_mycourse_01.png"/>
                 	</Button>
-                	<Button x:Name="btn_course_thumb_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Height="142" Click="ChefTablePage">
+                	<Button x:Name="btn_course_thumb_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0,10,0" Style="{StaticResource BtnThumb_Course}" Height="142" Click="ChefTable_Click">
                 		<Image x:Name="aa4" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Source="Assets/btn_make_course.png"/>
                 	</Button>
                 </VariableSizedWrapGrid>

@@ -12,6 +12,35 @@
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Chef Kitchen</x:String>
+        <Style x:Key="TextSubTitleStytle"
+        	TargetType="TextBlock">
+        	<Setter Property="FontSize"
+        		Value="34.667" />
+        	<Setter Property="FontFamily"
+        		Value="{ThemeResource ContentControlThemeFontFamily}" />
+        	<Setter Property="SelectionHighlightColor"
+        		Value="{ThemeResource TextSelectionHighlightColorThemeBrush}" />
+        	<Setter Property="TextTrimming"
+        		Value="CharacterEllipsis" />
+        	<Setter Property="TextWrapping"
+        		Value="Wrap" />
+        	<Setter Property="Typography.StylisticSet20"
+        		Value="True" />
+        	<Setter Property="Typography.DiscretionaryLigatures"
+        		Value="True" />
+        	<Setter Property="Typography.CaseSensitiveForms"
+        		Value="True" />
+        	<Setter Property="LineHeight"
+        		Value="30" />
+        	<Setter Property="LineStackingStrategy"
+        		Value="BlockLineHeight" />
+        	<Setter Property="TextLineBounds"
+        		Value="TrimToBaseline" />
+        	<Setter Property="OpticalMarginAlignment"
+        		Value="TrimSideBearings" />
+        	<Setter Property="Foreground"
+        		Value="#FF8D8D8D" />
+        </Style>
     </Page.Resources>
 
     <!--
@@ -59,8 +88,11 @@
                         VerticalAlignment="Top"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button" Background="#B3B6B6B6" Foreground="#FF79BC9F" >
-                	<Button Content="Button" Height="100" Style="{StaticResource NavigationBackButtonNormalStyle}" Width="100" Foreground="#FF79BC9F"/>
+                        AutomationProperties.ItemType="Navigation Button" Background="#B3B6B6B6" CompositeMode="{StaticResource ElementCompositeMode1}" >
+                	<Button.Foreground>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
+                	</Button.Foreground>
+                	<Button Content="Button" Height="100" Style="{StaticResource BackButton}" Width="100" Foreground="#FF79BC9F" ContentTemplate="{StaticResource NavigationBackButtonNormalStyle}"/>
                 </Button>
                 <TextBlock x:Name="pageTitle"
                            Text="{StaticResource AppName}"
@@ -71,7 +103,7 @@
                            VerticalAlignment="Bottom"
                            Margin="0,0,30,40" >
                 	<TextBlock.Foreground>
-                		<SolidColorBrush Color="#FF79BC9F"/>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
                 	</TextBlock.Foreground>
                 </TextBlock>
             </Grid>
@@ -79,7 +111,7 @@
                         Background="#FFFBFBFB"
                         Grid.Row="1" Margin="8.286,0,7.714,0" Grid.RowSpan="2">
                 <TextBlock Text="Profile"
-            		FontSize="40" Style="{StaticResource titleTextGray}" Margin="0" FontWeight="Thin" />
+            		FontSize="34.667" Style="{StaticResource titleTextGray}" Margin="0" FontWeight="Thin" />
                 <Image Source="Assets/profile_150_user1.png" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" />
                 <TextBlock FontSize="21.333"
                            Text="Olivia Shewerzki" Margin="0,10,0,0" CharacterSpacing="-20" FontWeight="Thin" >
@@ -132,9 +164,14 @@
             </StackPanel>
             
             <StackPanel Grid.Row="1"
-                        Grid.Column="3" Margin="0.286,0,5.714,0" VerticalAlignment="Top" Height="564">
-                <TextBlock Text="CourseGourmet"
-                           FontSize="40" Style="{StaticResource titleTextGray}" Margin="0" FontWeight="Thin" HorizontalAlignment="Left" />
+                        Grid.Column="3" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Style="{StaticResource TextSubTitleStytle}" Margin="0,0,-721,0" Height="30" FontWeight="Thin" Text="Course" />
+                <TextBlock Style="{StaticResource TextSubTitleStytle}"
+                	Text="Learning" Margin="0,0,0,8" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Thin" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
+                	</TextBlock.Foreground>
+                </TextBlock>
                 <VariableSizedWrapGrid HorizontalAlignment="Left" Orientation="Horizontal">
                 	<Button x:Name="btn_course_thumb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
                 		<Image x:Name="aa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_01.png"/>
@@ -146,16 +183,18 @@
                 		<Image x:Name="aa2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_03.png"/>
                 	</Button>
                 </VariableSizedWrapGrid>
-                <StackPanel Height="15" MinHeight="10" MaxHeight="300"/>
-
-
-                <TextBlock Text="Course_Chef"
-                           FontSize="40" Style="{StaticResource titleTextGray}" FontWeight="Thin" HorizontalAlignment="Left" />
+                <StackPanel Height="5" MinHeight="3" MaxHeight="300"/>
+                <TextBlock Style="{StaticResource TextSubTitleStytle}"
+                	Text="Serving" Margin="0,0,0,8" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Thin" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
+                	</TextBlock.Foreground>
+                </TextBlock>
                 <VariableSizedWrapGrid HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Top">
                 	<Button x:Name="btn_course_thumb1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
                 		<Image x:Name="aa3" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_mycourse_01.png"/>
                 	</Button>
-                	<Button x:Name="btn_course_thumb_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_test}" BorderThickness="0,0,10,0">
+                	<Button x:Name="btn_course_thumb_Copy2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0" Click="ChefTablePage">
                 		<Image x:Name="aa4" Source="Assets/btn_make_course.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 	</Button>
                 </VariableSizedWrapGrid>
@@ -165,7 +204,7 @@
             <StackPanel Grid.Column="5"
                         Grid.Row="1" Margin="0.286,0,-0.286,0">
                 <TextBlock x:Name="mission_badge" Text="Mission Badges"
-                           FontSize="40" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
+                           FontSize="34.667" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
                 <VariableSizedWrapGrid Margin="0" Height="200" MinHeight="190" MaxHeight="300">
                 	<Image Source="Assets/badge_01.png" Height="90" ToolTipService.ToolTip="Best Score" Margin="0,0,10,10" />
                 	<Image Source="Assets/badge_02.png" Height="90" ToolTipService.ToolTip="2014 Learncher of the Year" Margin="0,0,10,10" />
@@ -185,7 +224,7 @@
                 </VariableSizedWrapGrid>
                 <StackPanel Height="40" MinHeight="10" MaxHeight="100"/>
                 <TextBlock x:Name="course_badge" Text="Course Badges"
-                           FontSize="40" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
+                           FontSize="34.667" Style="{StaticResource titleTextGray}" Foreground="White" FontWeight="Thin" />
                 <VariableSizedWrapGrid Height="200" Margin="0,0,10,10">
                 	<Image Source="Assets/badge_course_01.png" Height="90" Margin="0,0,10,10" />
                 	<Image Source="Assets/badge_course_02.png" Height="90" Margin="0,0,10,10" />

@@ -102,42 +102,34 @@ namespace Learnch
         }
 
         #endregion        
-        private void Course_Tapped(object sender, TappedRoutedEventArgs e)
+        
+        private void ChefKitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+        	this.Frame.Navigate(typeof(ChefKitchenPage));
+        }
+
+        private void Course_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
             this.Frame.Navigate(typeof(CoursePage));
         }
-		
 
-        private void Chef_Table_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Category_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+            this.Frame.Navigate(typeof(CategoryPage));
+        }
+
+        private void ChefTable_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(ChefTablePage));
         }
 
-        private void btnAll_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CategoryPage));
-        }
 
-        private void Kitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CoursePage));
-        }
+   
+		
 
- 
-
-        private void BtnChef_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-          	this.Frame.Navigate(typeof(ChefTablePage));
-        }
-
-        private void ChefTablePage(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-        	 this.Frame.Navigate(typeof(ChefTablePage));
-        }
-
-        private void ChefKitchenPage(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-        	this.Frame.Navigate(typeof(ChefKitchenPage));
-        }
+       
     }
 }

@@ -106,6 +106,11 @@ namespace Learnch
         	this.Frame.Navigate(typeof(CoursePage));// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
         }
 
+        private void ChefTablePage(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	 this.Frame.Navigate(typeof(ChefTablePage));
+        }
+
         #endregion
     }
 }

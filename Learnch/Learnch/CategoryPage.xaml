@@ -8,7 +8,7 @@
     xmlns:common="using:Learnch.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Foreground="#FF7E3B3B">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
@@ -20,9 +20,9 @@
                   VerticalScrollMode="Disabled"
                   HorizontalScrollMode="Enabled"
                   ZoomMode="Disabled"
-                  Background="AliceBlue"
+                  Background="White"
                   Foreground="White">
-        <Grid Background="#FF6E6E6E">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="140" />
                 <RowDefinition Height="87" />
@@ -40,7 +40,11 @@
                         VerticalAlignment="Top"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button" />
+                        AutomationProperties.ItemType="Navigation Button" >
+                	<Button.Foreground>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
+                	</Button.Foreground>
+                </Button>
                 <TextBlock x:Name="pageTitle"
                            Text="{StaticResource AppName}"
                            Style="{StaticResource HeaderTextBlockStyle}"
@@ -48,7 +52,12 @@
                            IsHitTestVisible="false"
                            TextWrapping="NoWrap"
                            VerticalAlignment="Bottom"
-                           Margin="0,0,30,40" />
+                           Margin="0,0,30,40" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
+                	</TextBlock.Foreground>
+                </TextBlock>
+                <SearchBox Grid.Column="1" HorizontalAlignment="Left" Margin="956,75,0,0" VerticalAlignment="Top" Height="25" Width="224"/>
             </Grid>
             <StackPanel Orientation="Horizontal"
                         Grid.Row="1"
@@ -63,238 +72,21 @@
                     <x:String>Item 2</x:String>
                     <x:String>Item 3</x:String>
                 </ComboBox>
+                <ToggleButton Content="ToggleButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <ToggleButton Content="ToggleButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </StackPanel>
-            <VariableSizedWrapGrid HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
+            <VariableSizedWrapGrid
                                    Grid.Row="2"
-                                   Grid.RowSpan="3"
-                                   VerticalChildrenAlignment="Stretch"
-                                   Height="591"
-                                   Width="640">
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
-                <Grid HorizontalAlignment="Left"
-                      Width="160"
-                      Margin="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="150" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0"
-                           VerticalAlignment="Center"
-                           Stretch="UniformToFill"
-                           Source="Assets/Logo.png" />
-                    <Image Grid.Row="0"
-                           Height="50"
-                           VerticalAlignment="Bottom"
-                           HorizontalAlignment="Left"
-                           Source="Assets/Logo.png" />
-                    <TextBlock Height="30"
-                               VerticalAlignment="Bottom"
-                               HorizontalAlignment="Center"
-                               Text="Chef Name"
-                               FontSize="20" />
-                    <StackPanel Grid.Row="1">
-                        <TextBlock Text="Category"
-                                   FontSize="20" />
-                        <TextBlock Text="Course Title"
-                                   FontSize="20" />
-                    </StackPanel>
-                </Grid>
+                                   VerticalChildrenAlignment="Stretch" Margin="120,0,0,0">
+                <Button x:Name="btn_course_thumb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_01.png" Width="150"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_02.png"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa2" Source="Assets/thumb_learning_course_03.png"/>
+                </Button>
             </VariableSizedWrapGrid>
 
         </Grid>

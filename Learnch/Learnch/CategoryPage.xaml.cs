@@ -101,6 +101,11 @@ namespace Learnch
             navigationHelper.OnNavigatedFrom(e);
         }
 
+        private void Kitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	this.Frame.Navigate(typeof(ChefKitchenPage));
+        }
+
         #endregion
     }
 }

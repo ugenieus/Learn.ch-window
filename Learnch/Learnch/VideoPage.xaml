@@ -85,7 +85,8 @@
                           AutoPlay="False"
                           AreTransportControlsEnabled="True"
                           Height="400"
-                          Source="Assets/20140202_032118.mp4" />
+                          Source="Assets/20140202_032118.mp4"
+                          MediaEnded="MediaEnded" />
             <Grid Grid.Row="3"
                   Grid.Column="0">
                 <Grid.RowDefinitions>

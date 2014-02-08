@@ -28,6 +28,11 @@
                   ZoomMode="Disabled"
                   Background="AliceBlue">
         <Grid Background="White">
+            <Grid.ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition />
+                </TransitionCollection>
+            </Grid.ChildrenTransitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="115.714" />
                 <ColumnDefinition Width="266"/>
@@ -71,6 +76,7 @@
                 </TextBlock>
             </Grid>
             <StackPanel Grid.Column="1"
+                        Background="#FFFBFBFB"
                         Grid.Row="1" Margin="8.286,0,7.714,0" Grid.RowSpan="2">
                 <TextBlock Text="Profile"
             		FontSize="40" Style="{StaticResource titleTextGray}" Margin="0" FontWeight="Thin" />
@@ -124,8 +130,7 @@
 
 
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Background="#FFFBFBFB" Canvas.ZIndex="-5" Grid.ColumnSpan="2" Margin="0.286,0,76.714,0"/>
-
+            
             <StackPanel Grid.Row="1"
                         Grid.Column="3" Margin="0.286,0,5.714,0" VerticalAlignment="Top" Height="564">
                 <TextBlock Text="CourseGourmet"

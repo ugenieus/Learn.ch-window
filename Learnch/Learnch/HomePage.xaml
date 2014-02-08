@@ -236,11 +236,13 @@
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100">
-                	<AppBarButton HorizontalAlignment="Stretch" Label="AppBarButton" VerticalAlignment="Stretch">
-                		<AppBarButton.Icon>
-                			<BitmapIcon UriSource="Assets/btn_appbar_home.png"/>
-                		</AppBarButton.Icon>
-                	</AppBarButton>
+                    <Button HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Background="Transparent">
+                        <Button.Content>
+                            <Image Source="Assets/btn_appbar_home.png" />
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Grid.Column="1"
@@ -303,6 +305,11 @@
         <Grid x:Name="body"
               Background="White"
               Margin="0">
+            <Grid.ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition />
+                </TransitionCollection>
+            </Grid.ChildrenTransitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="34" />
                 <ColumnDefinition Width="290" />

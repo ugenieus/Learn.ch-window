@@ -39,12 +39,14 @@
                 <RowDefinition Height="40" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="300"/>
                 <ColumnDefinition Width="500" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
             <!-- Back button and page title -->
-            <Grid Grid.ColumnSpan="2">
+            <Grid Grid.ColumnSpan="4" Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120" />
                     <ColumnDefinition Width="*" />
@@ -57,7 +59,7 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button" />
-                <StackPanel Grid.Column="1" Margin="0,60,0,40" Orientation="Horizontal" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                <StackPanel Grid.Column="1" Margin="0,60,0,40" Orientation="Horizontal" Grid.ColumnSpan="2">
                 	<TextBlock x:Name="pageTitle"
                 		Text="Introductory Arduino Course"
                 		Style="{StaticResource HeaderTextBlockStyle}"
@@ -84,8 +86,7 @@
                 <Image Grid.Column="1" HorizontalAlignment="Right" Height="90" Margin="0,0,40,0" VerticalAlignment="Center" Width="90" Source="Assets/badge_course_04.png"/>
             </Grid>
             <StackPanel Grid.Row="1"
-                        Grid.Column="0"
-                        Grid.RowSpan="2" Margin="120,0,0,0">
+                        Grid.Column="1" Margin="0,0,20,0">
                 <Grid
                       Height="100">
                     <Grid.RowDefinitions>
@@ -99,39 +100,68 @@
                     <Image Stretch="UniformToFill"
                            Grid.RowSpan="2"
                            Source="Assets/profile_150_user1.png" Margin="0" />
+                    <TextBlock FontSize="33.333"
+                    	HorizontalAlignment="Left" Style="{StaticResource titleTextGray}" Text="Daye Nam" VerticalAlignment="Center" Grid.Column="1" Margin="15,0,0,0" />
                     <StackPanel Grid.Column="1"
-                                Grid.Row="0">
-                        <TextBlock FontSize="20"
-                                   HorizontalAlignment="Left"
-                                   Text="Chef Name" Style="{StaticResource titleTextGray}" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="1"
-                                Grid.Row="1">
-                        <TextBlock HorizontalAlignment="Left"
-                                   Text="yummy 20"
-                                   FontSize="20" />
-                        <TextBlock HorizontalAlignment="Left"
-                                   Text="gourmet 203"
-                                   FontSize="20" />
+                                Grid.Row="1" Margin="15,0,0,0">
+                        <StackPanel Margin="0" Orientation="Horizontal">
+                    		<TextBlock HorizontalAlignment="Left"
+                    			FontSize="16" VerticalAlignment="Center" >
+                    			<TextBlock.Foreground>
+                    				<SolidColorBrush Color="{StaticResource grey}"/>
+                    			</TextBlock.Foreground>
+                    			<Run Text="Y"/>
+                    			<Run Text="ummy"/>
+                    		</TextBlock>
+                    		<TextBlock HorizontalAlignment="Left"
+                    			Text="2983"
+                    			FontSize="16" FontWeight="Thin" Margin="10,0,0,0" VerticalAlignment="Center" >
+                    			<TextBlock.Foreground>
+                    				<SolidColorBrush Color="{StaticResource grey}"/>
+                    			</TextBlock.Foreground>
+                    		</TextBlock>
+                    	</StackPanel>
+                        <StackPanel Margin="0" Orientation="Horizontal">
+                        	<TextBlock HorizontalAlignment="Left"
+                        		Text="Gourmet"
+                        		FontSize="16" VerticalAlignment="Center" >
+                        		<TextBlock.Foreground>
+                        			<SolidColorBrush Color="{StaticResource grey}"/>
+                        		</TextBlock.Foreground>
+                        	</TextBlock>
+                        	<TextBlock HorizontalAlignment="Left"
+                        		Text="157"
+                        		FontSize="16" FontWeight="Thin" Margin="10,0,0,0" VerticalAlignment="Center" >
+                        		<TextBlock.Foreground>
+                        			<SolidColorBrush Color="{StaticResource grey}"/>
+                        		</TextBlock.Foreground>
+                        	</TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
-                <TextBlock FontSize="20"
+                <Path Data="M120,250 L480,250" Fill="#FFB9B9B9" HorizontalAlignment="Left" Height="1" Stretch="Fill" Stroke="#FFD6D6D6" UseLayoutRounding="False" VerticalAlignment="Top" Margin="0,20,0,0"/>
+                <TextBlock FontSize="16"
                            TextWrapping="WrapWholeWords"
-                           Text="Course Description-Aliquam hendrerit vitae justo ut dignissim. Aenean at nisl quis magna posuere feugiat ac et tellus. Nulla eu libero libero. Phasellus consequat scelerisque felis, sed cursus felis adipiscing id. Integer nec ante tempor, scelerisque mi in, ullamcorper ipsum. Curabitur semper urna sit amet massa lobortis, rutrum commodo dolor vulputate. Cras porttitor, lectus quis mattis " />
-                <Button HorizontalAlignment="Center"
-                        Content="Take/Withdraw" />
+                           Text="Hi, This course is an introductory Arduino course for people, who are interested in media art, physical computing and new media. I will explain it to you step by step in detail. So, don’t be afraid of programming! Enjoy :)" Margin="0,10,0,0" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource grey}"/>
+                	</TextBlock.Foreground>
+                </TextBlock>
+                <Button HorizontalAlignment="Stretch"
+                        Content="Take" VerticalAlignment="Stretch" Style="{StaticResource ButtonDefualt}" Height="40" Margin="0,40,0,0" />
             </StackPanel>
             <TextBlock Text="Course"
                        FontSize="30"
                        Style="{StaticResource titleTextGray}"
                        IsColorFontEnabled="False"
-                       Margin="0,0,400,104"
                        Grid.Row="1"
-                       Grid.Column="1"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="2"
                        HorizontalAlignment="Left"
-                       VerticalAlignment="Top" />
+                       VerticalAlignment="Top" Height="36" Width="86" />
             <StackPanel Grid.Row="1"
-                        Grid.Column="1"
+                        Grid.Column="2"
+                       Grid.ColumnSpan="2"
                         Margin="0,40,40,0"
                         Orientation="Horizontal">
                 <Grid VerticalAlignment="Top">

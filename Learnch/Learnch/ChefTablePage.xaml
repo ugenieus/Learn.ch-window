@@ -76,9 +76,9 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="430" />
                     <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="1760" />
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="210" />
+                    <ColumnDefinition Width="1450" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="200" />
                 </Grid.ColumnDefinitions>
                 <!-- Back button and page title -->
                 <Grid Grid.ColumnSpan="5">
@@ -145,7 +145,7 @@
                         <Image Grid.Column="0"
                                Grid.Row="0"
                                Grid.RowSpan="2"
-                               Source="Assets/badge_04.png"
+                               Source="Assets/badge_course_04.png"
                                HorizontalAlignment="Left"
                                Width="120" />
                         <Button Grid.Column="1"
@@ -368,12 +368,6 @@
                                            HorizontalAlignment="Left" />
                                     <Image x:Name="ThumbVideo_Copy9"
                                            Source="Assets/step02_video_02.png"
-                                           Width="300"
-                                           Margin="0,0,10,10"
-                                           VerticalAlignment="Top"
-                                           HorizontalAlignment="Left" />
-                                    <Image x:Name="ThumbVideo_Copy10"
-                                           Source="Assets/step02_video_03.png"
                                            Width="300"
                                            Margin="0,0,10,10"
                                            VerticalAlignment="Top"

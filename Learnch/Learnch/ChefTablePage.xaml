@@ -55,7 +55,6 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-
     <Grid>
         <ScrollViewer Visibility="Visible"
                       HorizontalScrollBarVisibility="Hidden"
@@ -282,109 +281,198 @@
                                 </VariableSizedWrapGrid>
                             </Border>
                         </StackPanel>
-                        <Border BorderBrush="Black"
-                                BorderThickness="0"
-                                Padding="10,10,0,0"
-                                Background="#FFF3F3F3"
-                                AllowDrop="True"
-                                Height="455"
-                                Margin="0,10,0,0">
-                            <VariableSizedWrapGrid x:Name="videoList2"
-                                                   Background="#FFF3F3F3"
-                                                   AllowDrop="True">
-                                <Image x:Name="ThumbVideo_Copy8"
-                                       Source="Assets/step02_video_01.png"
-                                       Width="300"
-                                       Margin="0,0,10,10"
-                                       VerticalAlignment="Top"
-                                       HorizontalAlignment="Left" />
-                                <Image x:Name="ThumbVideo_Copy9"
-                                       Source="Assets/step02_video_02.png"
-                                       Width="300"
-                                       Margin="0,0,10,10"
-                                       VerticalAlignment="Top"
-                                       HorizontalAlignment="Left" />
-                            </VariableSizedWrapGrid>
-                        </Border>
-                    </StackPanel>
-                    <StackPanel x:Name="videostep3"
-                                HorizontalAlignment="Left"
-                                Margin="10,0,0,0"
-                                Visibility="Collapsed" >
-                      <StackPanel Orientation="Vertical"
-                                  Width="320"
-                                  Height="82"
-                                    >
-                        <StackPanel Orientation="Vertical"
-                                    Width="320"
-                                    Height="82"
+                        <StackPanel x:Name="videostep2"
                                     HorizontalAlignment="Left">
-                          <Grid x:Name="step4">
-                            <Grid.RowDefinitions>
-                              <RowDefinition Height="Auto" />
-                              <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="40" />
-                              <ColumnDefinition Width="400" />
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Row="0"
-                                        Grid.Column="0"
-                                        Width="40"
-                                        Height="40">
-                              <StackPanel.Background>
-                                <SolidColorBrush Color="{StaticResource yellowDown_}" />
-                              </StackPanel.Background>
-                              <TextBlock Text="STEP"
-                                         FontSize="16"
-                                         Foreground="White"
-                                         Padding="2,0"
-                                         HorizontalAlignment="Center"
-                                         Width="40"
-                                         Margin="0,2,0,0" />
-                              <TextBlock Text="02"
-                                         FontSize="15"
-                                         TextAlignment="Center"
-                                         Foreground="White"
-                                         Padding="2,0" />
+                            <StackPanel Orientation="Vertical"
+                                        Width="320"
+                                        Height="82"
+                                        HorizontalAlignment="Left">
+                                <Grid x:Name="step4">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="400" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Row="0"
+                                                Grid.Column="0"
+                                                Width="40"
+                                                Height="40">
+                                        <StackPanel.Background>
+                                            <SolidColorBrush Color="{StaticResource yellowDown_}" />
+                                        </StackPanel.Background>
+                                        <TextBlock Text="STEP"
+                                                   FontSize="16"
+                                                   Foreground="White"
+                                                   Padding="2,0"
+                                                   HorizontalAlignment="Center"
+                                                   Width="40"
+                                                   Margin="0,2,0,0" />
+                                        <TextBlock Text="02"
+                                                   FontSize="15"
+                                                   TextAlignment="Center"
+                                                   Foreground="White"
+                                                   Padding="2,0" />
+                                    </StackPanel>
+                                    <TextBox Grid.Row="0"
+                                             Grid.Column="1"
+                                             PlaceholderText="Step Title"
+                                             BorderThickness="1"
+                                             FontSize="21.333"
+                                             Margin="10,0,120,0" />
+                                </Grid>
+                                <Grid Margin="0,10,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="85" />
+                                        <ColumnDefinition Width="40" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox PlaceholderText="Video URLing.."
+                                             BorderThickness="{StaticResource borderThick}"
+                                             InputScope="Url" />
+                                    <Button Grid.Column="1"
+                                            Content="Get video"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            BorderBrush="Black"
+                                            Style="{StaticResource ButtonDefualt}" />
+                                    <Button HorizontalAlignment="Stretch"
+                                            Style="{StaticResource ButtonDefualt}"
+                                            VerticalAlignment="Stretch"
+                                            Grid.Column="2"
+                                            Margin="5,0,0,0">
+                                        <Image Height="18"
+                                               Source="Assets/icon_folder.png"
+                                               Stretch="Fill"
+                                               Width="20" />
+                                    </Button>
+                                </Grid>
                             </StackPanel>
-                            <TextBox Grid.Row="0"
-                                     Grid.Column="1"
-                                     PlaceholderText="Step Title"
-                                     BorderThickness="1"
-                                     FontSize="21.333"
-                                     Margin="10,0,120,0" />
-                          </Grid>
-                          <Grid Margin="0,10,0,0">
-                            <Grid.ColumnDefinitions>
-                              <ColumnDefinition />
-                              <ColumnDefinition Width="85" />
-                              <ColumnDefinition Width="40" />
-                            </Grid.ColumnDefinitions>
-                            <TextBox PlaceholderText="Video URLing.."
-                                     BorderThickness="{StaticResource borderThick}"
-                                     InputScope="Url" />
-                            <Button Grid.Column="1"
-                                    Content="Get video"
-                                    HorizontalAlignment="Stretch"
-                                    VerticalAlignment="Stretch"
-                                    BorderBrush="Black"
-                                    Style="{StaticResource ButtonDefualt}" />
-                            <Button HorizontalAlignment="Stretch"
-                                    Style="{StaticResource ButtonDefualt}"
-                                    VerticalAlignment="Stretch"
-                                    Grid.Column="2"
-                                    Margin="5,0,0,0">
-                              <Image Height="18"
-                                     Source="Assets/icon_folder.png"
-                                     Stretch="Fill"
-                                     Width="20" />
-                            </Button>
-                          </Grid>
+                            <Border BorderBrush="Black"
+                                    BorderThickness="0"
+                                    Padding="10,10,0,0"
+                                    Background="#FFF3F3F3"
+                                    AllowDrop="True"
+                                    Height="455"
+                                    Margin="0,10,0,0">
+                                <VariableSizedWrapGrid x:Name="videoList2"
+                                                       Background="#FFF3F3F3"
+                                                       AllowDrop="True">
+                                    <Image x:Name="ThumbVideo_Copy8"
+                                           Source="Assets/step02_video_01.png"
+                                           Width="300"
+                                           Margin="0,0,10,10"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left" />
+                                    <Image x:Name="ThumbVideo_Copy9"
+                                           Source="Assets/step02_video_02.png"
+                                           Width="300"
+                                           Margin="0,0,10,10"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left" />
+                                    <Image x:Name="ThumbVideo_Copy10"
+                                           Source="Assets/step02_video_03.png"
+                                           Width="300"
+                                           Margin="0,0,10,10"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left" />
+                                </VariableSizedWrapGrid>
+                            </Border>
                         </StackPanel>
-                        
-                      </StackPanel>
-                        
+                        <StackPanel x:Name="videostep3"
+                                    HorizontalAlignment="Left"
+                                    Margin="10,0,0,0"
+                                    Visibility="Collapsed">
+                            <StackPanel Orientation="Vertical"
+                                        Width="320"
+                                        Height="82"
+                                        HorizontalAlignment="Left">
+                                <Grid x:Name="step2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="400" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Row="0"
+                                                Grid.Column="0"
+                                                Width="40"
+                                                Height="40">
+                                        <StackPanel.Background>
+                                            <SolidColorBrush Color="{StaticResource yellowDown_}" />
+                                        </StackPanel.Background>
+                                        <TextBlock Text="STEP"
+                                                   FontSize="16"
+                                                   Foreground="White"
+                                                   Padding="2,0"
+                                                   HorizontalAlignment="Center"
+                                                   Width="40"
+                                                   Margin="0,2,0,0" />
+                                        <TextBlock Text="03"
+                                                   FontSize="15"
+                                                   TextAlignment="Center"
+                                                   Foreground="White"
+                                                   Padding="2,0" />
+                                    </StackPanel>
+                                    <TextBox Grid.Row="0"
+                                             Grid.Column="1"
+                                             PlaceholderText="Step Title"
+                                             BorderThickness="1"
+                                             FontSize="21.333"
+                                             Margin="10,0,120,0" />
+                                </Grid>
+
+                                <Grid Margin="0,10,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="85" />
+                                        <ColumnDefinition Width="40" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox PlaceholderText="Video URLing.."
+                                             BorderThickness="{StaticResource borderThick}"
+                                             InputScope="Url" />
+                                    <Button Grid.Column="1"
+                                            Content="Get video"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            BorderBrush="Black"
+                                            Click="AddVideo_Click"
+                                            Style="{StaticResource ButtonDefualt}" />
+                                    <Button HorizontalAlignment="Stretch"
+                                            Style="{StaticResource ButtonDefualt}"
+                                            VerticalAlignment="Stretch"
+                                            Grid.Column="2"
+                                            Margin="5,0,0,0">
+                                        <Image Height="18"
+                                               Source="Assets/icon_folder.png"
+                                               Stretch="Fill"
+                                               Width="20" />
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                            <Border BorderBrush="Black"
+                                    BorderThickness="0"
+                                    Padding="10,10,0,0"
+                                    Background="#FFF3F3F3"
+                                    AllowDrop="True"
+                                    Height="455"
+                                    Margin="0,10,0,0">
+                                <VariableSizedWrapGrid x:Name="videoList1"
+                                                       Background="#FFF3F3F3"
+                                                       AllowDrop="True">
+                                    <Image x:Name="ThumbVideo_Copy4"
+                                           Source="Assets/step_video_add.png"
+                                           Margin="0,0,10,10"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left"
+                                           Width="300" />
+                                </VariableSizedWrapGrid>
+                            </Border>
+                        </StackPanel>
                         <Grid x:Name="videostep3_Copy"
                               HorizontalAlignment="Left"
                               Margin="10,0,0,0"

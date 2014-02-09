@@ -7,9 +7,14 @@
 	RequestedTheme="Light">
 	<Application.Resources>
 		<Color x:Key="grey">#FF8D8D8D</Color>
+		<FontWeight x:Key="thin">Thin</FontWeight>
+		<SolidColorBrush x:Key="Grey" Color="#FF898989"/>
+		<x:Int32 x:Key="minus20">-20</x:Int32>
 		<Style x:Key="titleTextGray" TargetType="TextBlock">
 			<Setter Property="FontFamily" Value="Global User Interface"/>
-			<Setter Property="Foreground" Value="#FF8D8D8D"/>
+			<Setter Property="Foreground" Value="{StaticResource Grey}"/>
+			<Setter Property="FontWeight" Value="{StaticResource thin}"/>
+			<Setter Property="CharacterSpacing" Value="{StaticResource minus20}"/>
 		</Style>
 		<Color x:Key="green">#FF79BC9F</Color>
 		<Color x:Key="lightGray">#FF898989</Color>
@@ -1300,6 +1305,7 @@
         		</Setter.Value>
         	</Setter>
         </Style>
+        <FontWeight x:Key="thinWeight">Thin</FontWeight>
     </Application.Resources>
 
 </Application>

@@ -108,36 +108,7 @@
             </StackPanel>
             <TextBlock Text="Course"
             	FontSize="30" Style="{StaticResource titleTextGray}" IsColorFontEnabled="False" Margin="0,0,400,104" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Grid Grid.Row="1" Grid.Column="1" Margin="0,40,0,0" ><Grid VerticalAlignment="Top" Margin="0,0,656,0">
-            		<Grid.RowDefinitions>
-            			<RowDefinition Height="Auto" />
-            		</Grid.RowDefinitions>
-            		<Grid.ColumnDefinitions>
-            			<ColumnDefinition Width="40" />
-            			<ColumnDefinition Width="270" />
-            		</Grid.ColumnDefinitions>
-            		<StackPanel x:Name="stepTag" Grid.Row="0"
-            			Grid.Column="0" Width="40" Height="40" Margin="0,0,0,2">
-            			<StackPanel.Background>
-            				<SolidColorBrush Color="{StaticResource yellowDown_}"/>
-            			</StackPanel.Background>
-            			<TextBlock Text="STEP"
-            				FontSize="16" Foreground="White" Padding="2,0" HorizontalAlignment="Center" Width="40" Margin="0,2,0,0" />
-            			<TextBlock Text="01"
-            				FontSize="15" TextAlignment="Center" Foreground="White" Padding="2,0" />
-            		</StackPanel>
-            		<TextBlock Grid.Row="0"
-            			Grid.Column="1"
-            			Text="intruduction to Arduino"
-            			FontSize="21.333" HorizontalAlignment="Left" Margin="10,0,0,0" Style="{StaticResource titleTextGray}" VerticalAlignment="Center" />
-            	</Grid>
-            	<Border BorderBrush="Black" BorderThickness="0" Padding="10,10,0,0" Background="#FFF3F3F3" AllowDrop="True" Margin="0,52,0,0" HorizontalAlignment="Left">
-            		<VariableSizedWrapGrid x:Name="videoList" Background="#FFF3F3F3" AllowDrop="True" ItemWidth="300" ItemHeight="160">
-            			<Image x:Name="ThumbVideo_Copy3" Source="Assets/step01_video_01.png" Width="300" Margin="0,0,10,10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            			<Image x:Name="ThumbVideo_Copy" Source="Assets/step01_video_02.png" Width="310" Margin="0,0,10,10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            			<Image x:Name="ThumbVideo_Copy1" Source="Assets/step01_video_03.png" Width="310" Margin="0,0,10,10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            		</VariableSizedWrapGrid>
-            	</Border>
+            <Grid Grid.Row="1" Grid.Column="1" Margin="0,40,0,0" >
             	<StackPanel x:Name="step1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
             		<Grid VerticalAlignment="Top">
             			<Grid.RowDefinitions>

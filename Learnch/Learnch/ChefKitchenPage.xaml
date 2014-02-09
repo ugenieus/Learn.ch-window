@@ -65,7 +65,7 @@
             </Grid.ChildrenTransitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="115.714" />
-                <ColumnDefinition Width="266" />
+                <ColumnDefinition Width="220" />
                 <ColumnDefinition Width="77" />
                 <ColumnDefinition Width="Auto"
                                   MinWidth="545" />
@@ -128,7 +128,7 @@
                         <SolidColorBrush Color="#FF3C3C3C" />
                     </TextBlock.Foreground>
                 </TextBlock>
-                <TextBlock FontSize="16"
+                <TextBlock FontSize="13.333"
                            Text="namdy0429@gmail.com">
                     <TextBlock.Foreground>
                         <SolidColorBrush Color="{StaticResource lightGray}" />
@@ -141,7 +141,7 @@
                            FontWeight="Thin"
                            Foreground="#FF3C3C3C" />
                 <TextBlock TextWrapping="WrapWholeWords"
-                           FontSize="16"
+                           FontSize="13.333"
                            Text="Open-Source Developer. Interested in the cross-section of Art, Gaming, Physical Computing, Human-Computer Interaction and the future of how we communicate."
                            Height="118"
                            MaxLines="6"
@@ -201,7 +201,7 @@
                            Margin="0,0,-721,0"
                            Height="30"
                            FontWeight="Thin"
-                           Text="Course" />
+                           Text="My Course" />
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                            Text="Learning"
                            Margin="0,0,0,8"

@@ -126,5 +126,7 @@ namespace Learnch
             this.Frame.Navigate(typeof(ChefTablePage));
         }
 
+        
+
     }
 }

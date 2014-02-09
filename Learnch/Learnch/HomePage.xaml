@@ -409,7 +409,7 @@
                     </Button>
                     <Button HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            Style="{StaticResource BtnAppbar_Nav}">
+                            Style="{StaticResource BtnAppbar_Nav}" Click="ChefTable_Click">
                         <StackPanel>
                             <Image Source="Assets/btn_appbar_make_course.png"
                                    HorizontalAlignment="Center"
@@ -778,7 +778,7 @@
                            Margin="0,0,-686,0"
                            Height="30"
                            FontWeight="Thin"
-                           Text="Course" />
+                           Text="My Course" />
                 <TextBlock Style="{StaticResource TextSubTitleStytle}"
                            Text="Learning"
                            Margin="0,0,0,8"

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // 기본 페이지 항목 템플릿에 대한 설명은 http://go.microsoft.com/fwlink/?LinkId=234237에 나와 있습니다.
@@ -102,5 +103,19 @@ namespace Learnch
         }
 
         #endregion
+
+        private void VideoStepAdd_Click(object sender, RoutedEventArgs e)
+        {
+            videostep3.Visibility = Visibility.Visible;
+        }
+
+        private void AddVideo_Click(object sender, RoutedEventArgs e)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.DecodePixelWidth = (int) ThumbVideo_Copy4.Width;
+            bitmapImage.UriSource = new Uri(ThumbVideo_Copy4.BaseUri, "Assets/step02_video_03.png");
+
+            ThumbVideo_Copy4.Source = bitmapImage;
+        }
     }
 }

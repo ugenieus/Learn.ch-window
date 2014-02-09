@@ -357,7 +357,8 @@
                     </StackPanel>
                     <StackPanel x:Name="videostep3"
                                 HorizontalAlignment="Left"
-                                Margin="10,0,0,0">
+                                Margin="10,0,0,0"
+                                Visibility="Collapsed" >
                         <StackPanel Orientation="Vertical"
                                     Width="320"
                                     Height="82"
@@ -411,7 +412,8 @@
                                         HorizontalAlignment="Stretch"
                                         VerticalAlignment="Stretch"
                                         BorderBrush="Black"
-                                        Style="{StaticResource ButtonDefualt}" />
+                                        Style="{StaticResource ButtonDefualt}"
+                                        Click="AddVideo_Click" />
                             </Grid>
                         </StackPanel>
                         <Border BorderBrush="Black"
@@ -442,7 +444,8 @@
                                 Style="{StaticResource ButtonYellow}"
                                 VerticalAlignment="Stretch"
                                 Margin="0"
-                                Width="80">
+                                Width="80"
+                                Click="VideoStepAdd_Click">
                             <Image Height="34"
                                    Source="Assets/icon_plus.png"
                                    Stretch="Fill"

@@ -388,7 +388,8 @@
                     </Button>
                     <Button HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            Style="{StaticResource BtnAppbar_Nav}" Click="ChefKitchen_Click">
+                            Style="{StaticResource BtnAppbar_Nav}"
+                            Click="ChefKitchen_Click">
                         <StackPanel>
                             <Image Source="Assets/btn_appbar_kitchin.png"
                                    HorizontalAlignment="Center"
@@ -409,7 +410,8 @@
                     </Button>
                     <Button HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
-                            Style="{StaticResource BtnAppbar_Nav}" Click="ChefTable_Click">
+                            Style="{StaticResource BtnAppbar_Nav}"
+                            Click="ChefTable_Click">
                         <StackPanel>
                             <Image Source="Assets/btn_appbar_make_course.png"
                                    HorizontalAlignment="Center"
@@ -843,7 +845,8 @@
                         <SolidColorBrush Color="{StaticResource yellow}" />
                     </TextBlock.Foreground>
                 </TextBlock>
-                <VariableSizedWrapGrid HorizontalAlignment="Left"
+                <StackPanel x:Name="view_serving"
+                                       HorizontalAlignment="Left"
                                        Orientation="Horizontal">
                     <Button x:Name="btn_course_thumb1"
                             HorizontalAlignment="Stretch"
@@ -859,6 +862,7 @@
                     <Button x:Name="btn_course_thumb_Copy2"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Top"
+                            Visibility="Visible"
                             Margin="0,0,10,0"
                             Style="{StaticResource BtnThumb_Course}"
                             Height="142"
@@ -869,7 +873,7 @@
                                Width="150"
                                Source="Assets/btn_make_course.png" />
                     </Button>
-                </VariableSizedWrapGrid>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </ScrollViewer>

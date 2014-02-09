@@ -29,7 +29,10 @@ namespace Learnch
             Popup p = this.Parent as Popup;
 
             // close the Popup
-            if (p != null) { p.IsOpen = false; }  
+            if (p != null) { p.IsOpen = false; }
+
+            Frame currentPage = (Frame)Window.Current.Content;
+            currentPage.Navigate(typeof(HomePage), true);
         }
     }
 }

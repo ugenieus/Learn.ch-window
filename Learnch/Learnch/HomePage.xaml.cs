@@ -66,6 +66,14 @@ namespace Learnch
         /// 유지됩니다. 페이지를 처음 방문할 때는 이 상태가 null입니다.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            if (e.NavigationParameter != null && e.NavigationParameter is bool && (bool)e.NavigationParameter == true)
+            {
+                btn_course_thumb1.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btn_course_thumb1.Visibility = Visibility.Collapsed;
+            }
         }
 
         /// <summary>
@@ -101,23 +109,23 @@ namespace Learnch
             navigationHelper.OnNavigatedFrom(e);
         }
 
-        #endregion        
-        
+        #endregion
+
         private void ChefKitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
-        	this.Frame.Navigate(typeof(ChefKitchenPage));
+            // TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+            this.Frame.Navigate(typeof(ChefKitchenPage));
         }
 
         private void Course_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+            // TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
             this.Frame.Navigate(typeof(CoursePage));
         }
 
         private void Category_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-        	// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+            // TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
             this.Frame.Navigate(typeof(CategoryPage));
         }
 
@@ -126,7 +134,7 @@ namespace Learnch
             this.Frame.Navigate(typeof(ChefTablePage));
         }
 
-        
+
 
     }
 }

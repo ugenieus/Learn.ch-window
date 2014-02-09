@@ -112,10 +112,21 @@ namespace Learnch
         private void AddVideo_Click(object sender, RoutedEventArgs e)
         {
             BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.DecodePixelWidth = (int) ThumbVideo_Copy4.Width;
+            bitmapImage.DecodePixelWidth = (int)ThumbVideo_Copy4.Width;
             bitmapImage.UriSource = new Uri(ThumbVideo_Copy4.BaseUri, "Assets/step02_video_03.png");
 
             ThumbVideo_Copy4.Source = bitmapImage;
+        }
+
+        private void ShowPopup_Click(object sender, RoutedEventArgs e)
+        {
+            if (!TablePopupView.IsOpen)
+            {
+                GridPopupView.Width = Window.Current.Bounds.Width;
+                GridPopupView.Height = Window.Current.Bounds.Height;
+                TablePopupView.IsOpen = true;
+            
+            }
         }
     }
 }

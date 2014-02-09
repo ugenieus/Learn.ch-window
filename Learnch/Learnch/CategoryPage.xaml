@@ -104,15 +104,36 @@
             </StackPanel>
             <VariableSizedWrapGrid
                                    Grid.Row="2"
-                                   VerticalChildrenAlignment="Stretch" Margin="120,0,0,40">
-                <Button x:Name="btn_course_thumb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
-                	<Image x:Name="aa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_01.png" Width="150"/>
+                                   VerticalChildrenAlignment="Stretch" Margin="120,0,0,40" ItemHeight="240" ItemWidth="160" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button x:Name="btn_course_thumb" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0">
+                	<Image x:Name="aa" Source="Assets/thumb_learning_course_05.png" Width="150"/>
                 </Button>
-                <Button x:Name="btn_course_thumb_Copy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
-                	<Image x:Name="aa1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_02.png"/>
+                <Button x:Name="btn_course_thumb_Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_06.png"/>
                 </Button>
-                <Button x:Name="btn_course_thumb_Copy1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
-                	<Image x:Name="aa2" Source="Assets/thumb_learning_course_03.png"/>
+                <Button x:Name="btn_course_thumb_Copy1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa2" Source="Assets/thumb_learning_course_07.png"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0">
+                	<Image x:Name="aa3" Source="Assets/thumb_learning_course_08.png" Width="150"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa4" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_09.png"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa5" Source="Assets/thumb_learning_course_10.png"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0">
+                	<Image x:Name="aa6" Source="Assets/thumb_learning_course_11.png" Width="150"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa7" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_12.png"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa8" Source="Assets/thumb_learning_course_13.png"/>
+                </Button>
+                <Button x:Name="btn_course_thumb_Copy8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
+                	<Image x:Name="aa9" Source="Assets/thumb_mycourse_01.png"/>
                 </Button>
             </VariableSizedWrapGrid>
 

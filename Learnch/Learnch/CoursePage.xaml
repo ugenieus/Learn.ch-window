@@ -39,7 +39,7 @@
                 <RowDefinition Height="40" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="500" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -57,45 +57,60 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button" />
-                <TextBlock x:Name="pageTitle"
-                           Text="{StaticResource AppName}"
-                           Style="{StaticResource HeaderTextBlockStyle}"
-                           Grid.Column="1"
-                           IsHitTestVisible="false"
-                           TextWrapping="NoWrap"
-                           VerticalAlignment="Bottom"
-                           Margin="0,0,30,40" />
+                <StackPanel Grid.Column="1" Margin="0,60,0,40" Orientation="Horizontal" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                	<TextBlock x:Name="pageTitle"
+                		Text="Introductory Arduino Course"
+                		Style="{StaticResource HeaderTextBlockStyle}"
+                		IsHitTestVisible="false"
+                		TextWrapping="NoWrap"
+                		VerticalAlignment="Bottom"
+                		HorizontalAlignment="Left" >
+                		<TextBlock.Foreground>
+                			<SolidColorBrush Color="{StaticResource yellow}"/>
+                		</TextBlock.Foreground>
+                	</TextBlock>
+                	<TextBlock x:Name="pageTitle_Copy"
+                		Text="Technology"
+                		Style="{StaticResource HeaderTextBlockStyle}"
+                		IsHitTestVisible="false"
+                		TextWrapping="NoWrap"
+                		VerticalAlignment="Bottom"
+                		HorizontalAlignment="Left" FontSize="32" Margin="30,0,0,0" >
+                		<TextBlock.Foreground>
+                			<SolidColorBrush Color="{StaticResource grey}"/>
+                		</TextBlock.Foreground>
+                	</TextBlock>
+                </StackPanel>
+                <Image Grid.Column="1" HorizontalAlignment="Right" Height="90" Margin="0,0,40,0" VerticalAlignment="Center" Width="90" Source="Assets/badge_course_04.png"/>
             </Grid>
             <StackPanel Grid.Row="1"
                         Grid.Column="0"
-                        Grid.RowSpan="2">
-                <Grid Width="400"
-                      Height="150">
+                        Grid.RowSpan="2" Margin="120,0,0,0">
+                <Grid
+                      Height="100">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="100" />
+                        <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200" />
-                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Image Stretch="UniformToFill"
                            Grid.RowSpan="2"
-                           Source="Assets/Logo.png" />
+                           Source="Assets/profile_150_user1.png" Margin="0" />
                     <StackPanel Grid.Column="1"
                                 Grid.Row="0">
-                        <Image Height="60"
-                               Source="Assets/Logo.png" />
                         <TextBlock FontSize="20"
-                                   HorizontalAlignment="Center"
-                                   Text="Chef Name" />
+                                   HorizontalAlignment="Left"
+                                   Text="Chef Name" Style="{StaticResource titleTextGray}" />
                     </StackPanel>
                     <StackPanel Grid.Column="1"
                                 Grid.Row="1">
-                        <TextBlock HorizontalAlignment="Center"
+                        <TextBlock HorizontalAlignment="Left"
                                    Text="yummy 20"
                                    FontSize="20" />
-                        <TextBlock HorizontalAlignment="Center"
+                        <TextBlock HorizontalAlignment="Left"
                                    Text="gourmet 203"
                                    FontSize="20" />
                     </StackPanel>
@@ -117,7 +132,7 @@
                        VerticalAlignment="Top" />
             <StackPanel Grid.Row="1"
                         Grid.Column="1"
-                        Margin="0,40,0,0"
+                        Margin="0,40,40,0"
                         Orientation="Horizontal">
                 <Grid VerticalAlignment="Top">
                     <Grid.RowDefinitions>
@@ -168,88 +183,12 @@
                         <VariableSizedWrapGrid x:Name="videoList1"
                                                Background="#FFF3F3F3"
                                                AllowDrop="True"
-                                               ItemWidth="300"
-                                               ItemHeight="160">
+                                               ItemWidth="310"
+                                               ItemHeight="170">
                             <Image x:Name="ThumbVideo_Copy2"
                                    Source="Assets/step01_video_01.png"
                                    Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
+                                   Margin="0"
                                    VerticalAlignment="Top"
                                    HorizontalAlignment="Left" />
                             <Image x:Name="ThumbVideo_Copy4"
@@ -267,7 +206,7 @@
                         </VariableSizedWrapGrid>
                     </Border>
                 </Grid>
-                <Grid VerticalAlignment="Top">
+                <Grid VerticalAlignment="Top" Margin="10,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
@@ -290,13 +229,13 @@
                                        HorizontalAlignment="Center"
                                        Width="40"
                                        Margin="0,2,0,0" />
-                            <TextBlock Text="01"
+                            <TextBlock Text="02"
                                        FontSize="15"
                                        TextAlignment="Center"
                                        Foreground="White"
                                        Padding="2,0" />
                         </StackPanel>
-                        <TextBlock Text="intruduction to Arduino"
+                        <TextBlock Text="Basic Arduino"
                                    FontSize="21.333"
                                    HorizontalAlignment="Left"
                                    Margin="10,8,0,8"
@@ -317,81 +256,15 @@
                             Margin="0,10,0,0">
                         <VariableSizedWrapGrid Background="#FFF3F3F3"
                                                AllowDrop="True"
-                                               ItemWidth="300"
-                                               ItemHeight="160">
+                                               ItemWidth="310"
+                                               ItemHeight="170">
 
-                            <Image Source="Assets/step01_video_01.png"
+                            <Image Source="Assets/step02_video_01.png"
                                    Width="300"
                                    Margin="0,0,10,10"
                                    VerticalAlignment="Top"
                                    HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0,0,10,10"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
-                            <Image Source="Assets/step01_video_01.png"
+                            <Image Source="Assets/step01_video_02.png"
                                    Width="300"
                                    Margin="0,0,10,10"
                                    VerticalAlignment="Top"
@@ -399,6 +272,68 @@
 
                         </VariableSizedWrapGrid>
                     </Border>
+                </Grid>
+                <Grid VerticalAlignment="Top" Margin="10,0,0,0">
+                	<Grid.RowDefinitions>
+                		<RowDefinition Height="Auto" />
+                		<RowDefinition Height="*" />
+                	</Grid.RowDefinitions>
+                	<StackPanel Orientation="Horizontal"
+                		Grid.Row="0">
+                		<StackPanel 
+                			Grid.Row="0"
+                			Grid.Column="0"
+                			HorizontalAlignment="Left"
+                			Width="40"
+                			Margin="0,0,0,2">
+                			<StackPanel.Background>
+                				<SolidColorBrush Color="{StaticResource yellowDown_}" />
+                			</StackPanel.Background>
+                			<TextBlock Text="STEP"
+                				FontSize="16"
+                				Foreground="White"
+                				Padding="2,0"
+                				HorizontalAlignment="Center"
+                				Width="40"
+                				Margin="0,2,0,0" />
+                			<TextBlock Text="03"
+                				FontSize="15"
+                				TextAlignment="Center"
+                				Foreground="White"
+                				Padding="2,0" />
+                		</StackPanel>
+                		<TextBlock Text="Analog"
+                			FontSize="21.333"
+                			HorizontalAlignment="Left"
+                			Margin="10,8,0,8"
+                			Style="{StaticResource titleTextGray}"
+                			VerticalAlignment="Center"
+                			Height="26"
+                			Width="199" />
+                	</StackPanel>
+
+                	<Border Grid.Row="1"
+                		Grid.Column="0"
+                		Grid.ColumnSpan="3"
+                		BorderBrush="Black"
+                		BorderThickness="0"
+                		Padding="10,10,0,0"
+                		Background="#FFF3F3F3"
+                		AllowDrop="True"
+                		Margin="0,10,0,0">
+                		<VariableSizedWrapGrid Background="#FFF3F3F3"
+                			AllowDrop="True"
+                			ItemWidth="310"
+                			ItemHeight="170">
+
+                			<Image Source="Assets/step02_video_03.png"
+                				Width="300"
+                				Margin="0,0,10,10"
+                				VerticalAlignment="Top"
+                				HorizontalAlignment="Left" />
+
+                		</VariableSizedWrapGrid>
+                	</Border>
                 </Grid>
             </StackPanel>
         </Grid>

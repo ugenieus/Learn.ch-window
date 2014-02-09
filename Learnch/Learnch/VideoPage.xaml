@@ -34,11 +34,12 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="600" />
-                <ColumnDefinition Width="400" />
-                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="630"/>
+                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="300" />
             </Grid.ColumnDefinitions>
-            <Grid Grid.ColumnSpan="2"
+            <Grid Grid.ColumnSpan="3"
                   Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120" />
@@ -59,51 +60,54 @@
                            IsHitTestVisible="false"
                            TextWrapping="NoWrap"
                            VerticalAlignment="Bottom"
-                           Margin="0,0,30,40" />
+                           Margin="0,0,30,40" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource yellow}"/>
+                	</TextBlock.Foreground>
+                </TextBlock>
 
             </Grid>
             <StackPanel VerticalAlignment="Bottom"
                         Grid.Row="1"
-                        Grid.Column="0">
+                        Grid.Column="1" Height="60">
                 <TextBlock Text="Course Title"
-                           FontSize="30" />
+                           FontSize="30" Style="{StaticResource titleTextGray}" />
                 <TextBlock Text="Step Title"
                            FontSize="20" />
             </StackPanel>
             <TextBlock VerticalAlignment="Bottom"
                        Grid.Row="1"
-                       Grid.Column="1"
-                       FontSize="30"
-                       Text="Source info" />
-            <TextBlock VerticalAlignment="Bottom"
-                       Grid.Row="1"
                        Grid.Column="2"
                        FontSize="30"
-                       Text="Memo" />
+                       Text="Source info" Style="{StaticResource titleTextGray}" Height="36" />
+            <TextBlock VerticalAlignment="Bottom"
+                       Grid.Row="1"
+                       Grid.Column="3"
+                       FontSize="30"
+                       Text="Memo" Style="{StaticResource titleTextGray}" Height="36" />
             <MediaElement Grid.Row="2"
-                          Grid.Column="0"
+                          Grid.Column="1"
                           AutoPlay="False"
                           AreTransportControlsEnabled="True"
-                          Height="400"
                           Source="Assets/20140202_032118.mp4"
                           MediaEnded="MediaEnded" />
             <Grid Grid.Row="3"
-                  Grid.Column="0">
+                  Grid.Column="1" Margin="0,0,0,24">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="400" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="330" />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Row="0"
                             Grid.ColumnSpan="2"
                             Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Bottom"
                                FontSize="30"
-                               Text="Video title" />
+                               Text="Video title" Style="{StaticResource titleTextGray}" />
                     <ToggleButton VerticalAlignment="Bottom"
                                   VerticalContentAlignment="Bottom"
                                   FontSize="20"
@@ -144,7 +148,7 @@
                            Text="lecture material 1.pdf lecture material 2.jpg lecture material 3.png" />
             </Grid>
             <StackPanel Grid.Row="2"
-                        Grid.Column="1">
+                        Grid.Column="2">
                 <TextBlock Text="Video title"
                            FontSize="30" />
                 <TextBlock Text="Video description"
@@ -154,9 +158,9 @@
                            TextWrapping="WrapWholeWords" />
             </StackPanel>
             <Grid Grid.Row="2"
-                  Grid.Column="2"
+                  Grid.Column="3"
                   Grid.RowSpan="2"
-                  Background="BlueViolet">
+                  Background="BlueViolet" Margin="0,0,0,24">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="100" />

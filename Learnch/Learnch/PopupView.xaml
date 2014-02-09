@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Learnch.PopupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:Learnch"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <Grid Background="#88000000"
+          Width="Auto"
+          Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="360" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1"
+              Background="#ffb534">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="Assets/badge_01.png"
+                   Height="256" />
+            <StackPanel Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Congratulations!"
+                           FontSize="50"
+                           Foreground="White" />
+                <TextBlock Text="You've just finished introductory Arduino Course!"
+                           FontSize="30"
+                           Foreground="White" />
+                <Button Content="OK" 
+                        Foreground="White"
+                        Background="Transparent"
+                        Margin="600,0,0,0"
+                        Click="PopupOk_Click" />
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

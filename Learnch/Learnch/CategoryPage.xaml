@@ -105,7 +105,7 @@
             <VariableSizedWrapGrid
                                    Grid.Row="2"
                                    VerticalChildrenAlignment="Stretch" Margin="120,0,0,40" ItemHeight="240" ItemWidth="160" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Button x:Name="btn_course_thumb" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0">
+                <Button x:Name="btn_course_thumb" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Course_Click" BorderThickness="0">
                 	<Image x:Name="aa" Source="Assets/thumb_learning_course_05.png" Width="150"/>
                 </Button>
                 <Button x:Name="btn_course_thumb_Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
@@ -129,10 +129,10 @@
                 <Button x:Name="btn_course_thumb_Copy6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" Click="Kitchen_Click" BorderThickness="0,0,10,0">
                 	<Image x:Name="aa7" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Assets/thumb_learning_course_12.png"/>
                 </Button>
-                <Button x:Name="btn_course_thumb_Copy7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
+                <Button x:Name="btn_course_thumb_Copy7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0" Click="Course_Click">
                 	<Image x:Name="aa8" Source="Assets/thumb_learning_course_13.png"/>
                 </Button>
-                <Button x:Name="btn_course_thumb_Copy8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0">
+                <Button x:Name="btn_course_thumb_Copy8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Style="{StaticResource BtnThumb_Course}" BorderThickness="0,0,10,0" Click="Course_Click">
                 	<Image x:Name="aa9" Source="Assets/thumb_mycourse_01.png"/>
                 </Button>
             </VariableSizedWrapGrid>

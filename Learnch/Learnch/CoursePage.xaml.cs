@@ -107,5 +107,10 @@ namespace Learnch
         {
             this.Frame.Navigate(typeof(VideoPage));
         }
+
+        private void Video_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	 this.Frame.Navigate(typeof(VideoPage));// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+        }
     }
 }

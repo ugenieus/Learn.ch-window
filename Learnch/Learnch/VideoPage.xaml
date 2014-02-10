@@ -13,6 +13,87 @@
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Video</x:String>
     </Page.Resources>
+	<Page.TopAppBar>
+		<AppBar Margin="0,0,0,71"
+			Background="#E2FFFFFF">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50*" />
+					<ColumnDefinition Width="50*" />
+				</Grid.ColumnDefinitions>
+				<StackPanel Orientation="Horizontal"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					Grid.ColumnSpan="2">
+					<Button HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Style="{StaticResource BtnAppbar_Nav}" Click="HomePage_Click">
+						<StackPanel>
+							<Image Source="Assets/btn_appbar_home.png"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Width="100"
+								Height="100" />
+							<TextBlock TextWrapping="Wrap"
+								Text="Learnch Home"
+								TextAlignment="Center"
+								FontSize="21.333"
+								CharacterSpacing="-50"
+								Foreground="#FF6C6C6C"
+								Margin="0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Center"
+								Width="130" />
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Style="{StaticResource BtnAppbar_Nav}"
+						Click="ChefKitchen_Click">
+						<StackPanel>
+							<Image Source="Assets/btn_appbar_kitchin.png"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Width="100"
+								Height="100" />
+							<TextBlock TextWrapping="Wrap"
+								Text="My Kitchen"
+								TextAlignment="Center"
+								FontSize="21.333"
+								CharacterSpacing="-50"
+								Foreground="#FF6C6C6C"
+								Margin="0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Center"
+								Width="130" />
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Style="{StaticResource BtnAppbar_Nav}"
+						Click="ChefTable_Click">
+						<StackPanel>
+							<Image Source="Assets/btn_appbar_make_course.png"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Width="100"
+								Height="100" />
+							<TextBlock TextWrapping="Wrap"
+								Text="Make Course"
+								TextAlignment="Center"
+								FontSize="21.333"
+								CharacterSpacing="-50"
+								Foreground="#FF6C6C6C"
+								Margin="0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Center"
+								Width="130" />
+						</StackPanel>
+					</Button>
+				</StackPanel>
+			</Grid>
+		</AppBar>
+	</Page.TopAppBar>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -29,9 +110,9 @@
         <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="140" />
-                <RowDefinition Height="60" />
-                <RowDefinition Height="400" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="360" />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120" />
@@ -69,11 +150,33 @@
             </Grid>
             <StackPanel VerticalAlignment="Bottom"
                         Grid.Row="1"
-                        Grid.Column="1" Height="60">
-                <TextBlock Text="Course Title"
+                        Grid.Column="1" Height="76">
+                <TextBlock Text="Introductory Arduino Course"
                            FontSize="30" Style="{StaticResource titleTextGray}" />
-                <TextBlock Text="Step Title"
-                           FontSize="20" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                	<StackPanel x:Name="stepTag1"
+                		HorizontalAlignment="Left"
+                		Width="40"
+	Height="40">
+                		<StackPanel.Background>
+                			<SolidColorBrush Color="{StaticResource yellowDown_}" />
+                		</StackPanel.Background>
+                		<TextBlock Text="STEP"
+                			FontSize="16"
+                			Foreground="White"
+                			Padding="2,0"
+                			HorizontalAlignment="Center"
+                			Width="40"
+                			Margin="0,2,0,0" />
+                		<TextBlock Text="01"
+                			FontSize="15"
+                			TextAlignment="Center"
+                			Foreground="White"
+                			Padding="2,0" />
+                	</StackPanel>
+                	<TextBlock Text="Introduction to  Arduino"
+                		FontSize="20" VerticalAlignment="Center" />
+                </StackPanel>
             </StackPanel>
             <TextBlock VerticalAlignment="Bottom"
                        Grid.Row="1"
@@ -89,7 +192,7 @@
                           Grid.Column="1"
                           AutoPlay="False"
                           AreTransportControlsEnabled="True"
-                          Source="Assets/20140202_032118.mp4"
+                          Source="Assets/Open Source Hardware Explained - EEVblog 195.mp4"
                           MediaEnded="MediaEnded" />
             <Grid Grid.Row="3"
                   Grid.Column="1" Margin="0,0,0,24">
@@ -107,7 +210,7 @@
                             Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Bottom"
                                FontSize="30"
-                               Text="Video title" Style="{StaticResource titleTextGray}" />
+                               Text="Open Source Hardware?" Style="{StaticResource titleTextGray}" />
                     <ToggleButton VerticalAlignment="Bottom"
                                   VerticalContentAlignment="Bottom"
                                   FontSize="20"
@@ -149,7 +252,7 @@
             </Grid>
             <StackPanel Grid.Row="2"
                         Grid.Column="2">
-                <TextBlock Text="Video title"
+                <TextBlock Text="Open Source Hardware?"
                            FontSize="30" />
                 <TextBlock Text="Video description"
                            FontSize="20" />
@@ -159,11 +262,10 @@
             </StackPanel>
             <Grid Grid.Row="2"
                   Grid.Column="3"
-                  Grid.RowSpan="2"
-                  Background="BlueViolet" Margin="0,0,0,24">
+                  Grid.RowSpan="2" Margin="0,0,0,24" Background="#FFF9F9F9">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="100" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <TextBlock TextWrapping="WrapWholeWords"
                            FontSize="20"
@@ -171,8 +273,8 @@
                 <Button Grid.Row="1"
                         FontSize="30"
                         Content="Save"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center" />
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" />
 
             </Grid>
         </Grid>

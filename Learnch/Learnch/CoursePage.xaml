@@ -215,12 +215,14 @@
                                                AllowDrop="True"
                                                ItemWidth="310"
                                                ItemHeight="170">
-                            <Image x:Name="ThumbVideo_Copy2"
-                                   Source="Assets/step01_video_01.png"
-                                   Width="300"
-                                   Margin="0"
-                                   VerticalAlignment="Top"
-                                   HorizontalAlignment="Left" />
+                            <Button HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="310" Style="{StaticResource BtnThumb_Course}" Click="Video_Click">
+                            	<Image x:Name="ThumbVideo_Copy2"
+                            		Source="Assets/step01_video_01.png"
+                            		Width="300"
+                            		Margin="0"
+                            		VerticalAlignment="Top"
+                            		HorizontalAlignment="Left" />
+                            </Button>
                             <Image x:Name="ThumbVideo_Copy4"
                                    Source="Assets/step01_video_02.png"
                                    Width="310"

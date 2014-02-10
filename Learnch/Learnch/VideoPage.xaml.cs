@@ -132,5 +132,32 @@ namespace Learnch
 //            rootPage.NotifyUser("The '" + command.Label + "' command has been selected.",
 //        NotifyType.StatusMessage);
         }
+		private void ChefKitchen_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            // TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+            this.Frame.Navigate(typeof(ChefKitchenPage));
+        }
+
+        private void Course_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            // TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+            this.Frame.Navigate(typeof(CoursePage));
+        }
+
+        private void Category_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            // TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+            this.Frame.Navigate(typeof(CategoryPage));
+        }
+
+        private void ChefTable_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ChefTablePage));
+        }
+
+        private void HomePage_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	this.Frame.Navigate(typeof(HomePage));// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+        }
     }
 }

@@ -112,24 +112,43 @@
                     <TextBlock Text="Course Title"
                                Style="{StaticResource SubTitleStyle}" />
                     <TextBox PlaceholderText="Enter your course title"
-                             BorderThickness="1" />
-                    <TextBlock Text="Menu Category"
+                             BorderThickness="1" Text="Introductory Arduino Course" >
+                    	<TextBox.Foreground>
+                    		<SolidColorBrush Color="{StaticResource grey}"/>
+                    	</TextBox.Foreground>
+                    </TextBox>
+                    <TextBlock Text="Category"
                                Style="{StaticResource SubTitleStyle}"
                                Margin="0,30,0,8" />
                     <ComboBox Height="30"
                               BorderThickness="1"
                               SelectedIndex="0">
-                        <x:String>Item 1</x:String>
-                        <x:String>Item 2</x:String>
-                        <x:String>Item 3</x:String>
+                    	<ComboBox.Foreground>
+                    		<SolidColorBrush Color="{StaticResource grey}"/>
+                    	</ComboBox.Foreground>
+                        <x:String>Technology</x:String>
+                        <x:String>Art</x:String>
+						<x:String>Culture</x:String>
+						<x:String>Science</x:String>
+						<x:String>Social Science</x:String>
+						<x:String>Language</x:String>
+						<x:String>Literature</x:String>
+						<x:String>IT</x:String>
+						<x:String>Economy</x:String>
+						<x:String>Entertainment</x:String>
+						<x:String>ETC</x:String>
                     </ComboBox>
                     <TextBlock Text="Course Description"
                                Style="{StaticResource SubTitleStyle}"
                                Margin="0,30,0,8" />
-                    <TextBox PlaceholderText="Enter your course description"
+                    <TextBox PlaceholderText=""
                              Height="150"
                              BorderThickness="1"
-                             InputScope="Chat" />
+                             InputScope="Chat" Text="Hi, This course is an introductory Arduino course for people, who are interested in media art, physical computing and new media. I will explain it to you step by step in detail. So, don’t be afraid of programming! Enjoy :)" >
+                    	<TextBox.Foreground>
+                    		<SolidColorBrush Color="{StaticResource grey}"/>
+                    	</TextBox.Foreground>
+                    </TextBox>
                     <TextBlock Text="Badge"
                                Style="{StaticResource SubTitleStyle}"
                                Margin="0,30,0,8" />
@@ -145,14 +164,13 @@
                         <Image Grid.Column="0"
                                Grid.Row="0"
                                Grid.RowSpan="2"
-                               Source="Assets/badge_course_04.png"
+                               Source="Assets/badge_popup_240.png"
                                HorizontalAlignment="Left"
                                Width="120" />
                         <Button Grid.Column="1"
                                 Grid.Row="0"
                                 Content="Upload Image"
                                 Style="{StaticResource ButtonDefualt}"
-                                Height="28"
                                 Margin="0,20,0,8"
                                 Width="118" />
                         <Button Grid.Column="1"
@@ -221,7 +239,11 @@
                                              BorderThickness="1"
                                              FontSize="21.333"
                                              Margin="10,0,-10,0"
-                                             Width="270" />
+                                             Width="270" Text="Introduction to Arduino" >
+                                    	<TextBox.Foreground>
+                                    		<SolidColorBrush Color="{StaticResource grey}"/>
+                                    	</TextBox.Foreground>
+                                    </TextBox>
                                 </Grid>
                                 <Grid Margin="0,10,0,0">
                                     <Grid.ColumnDefinitions>
@@ -321,7 +343,11 @@
                                              PlaceholderText="Step Title"
                                              BorderThickness="1"
                                              FontSize="21.333"
-                                             Margin="10,0,120,0" />
+                                             Margin="10,0,120,0" Text="Basic Arduino" >
+                                    	<TextBox.Foreground>
+                                    		<SolidColorBrush Color="{StaticResource grey}"/>
+                                    	</TextBox.Foreground>
+                                    </TextBox>
                                 </Grid>
                                 <Grid Margin="0,10,0,0">
                                     <Grid.ColumnDefinitions>
@@ -417,7 +443,11 @@
                                              PlaceholderText="Step Title"
                                              BorderThickness="1"
                                              FontSize="21.333"
-                                             Margin="10,0,120,0" />
+                                             Margin="10,0,120,0" Text="Analog Input" >
+                                    	<TextBox.Foreground>
+                                    		<SolidColorBrush Color="{StaticResource grey}"/>
+                                    	</TextBox.Foreground>
+                                    </TextBox>
                                 </Grid>
 
                                 <Grid Margin="0,10,0,0">

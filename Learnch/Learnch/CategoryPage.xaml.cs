@@ -151,5 +151,10 @@ namespace Learnch
         {
             sender.Style = (showPinButton) ? (this.Resources["PinAppBarButtonStyle"] as Style) : (this.Resources["UnpinAppBarButtonStyle"] as Style);
         }
+
+        private void Course_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	 this.Frame.Navigate(typeof(CoursePage));// TODO: 여기에 구현된 이벤트 처리기를 추가하십시오.
+        }
     }
 }

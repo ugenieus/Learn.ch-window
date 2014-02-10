@@ -21,11 +21,11 @@
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
 
-            <Image Source="Assets/badge_01.png"
-                   Height="256" />
+            <Image Source="Assets/badge_popup_240.png"
+                   Height="240" Width="240" HorizontalAlignment="Right" Margin="0,0,50,0" />
             <StackPanel Grid.Column="1"
                         Grid.ColumnSpan="2"
-                        VerticalAlignment="Center">
+                        VerticalAlignment="Center" Width="800" HorizontalAlignment="Left">
                 <TextBlock Text="Congratulations!"
                            FontSize="50"
                            Foreground="White" />
@@ -35,8 +35,8 @@
                 <Button Content="OK" 
                         Foreground="White"
                         Background="Transparent"
-                        Margin="600,0,0,0"
-                        Click="PopupOk_Click" />
+                        Margin="0,60,40,0"
+                        Click="PopupOk_Click" Style="{StaticResource Buttonstroke}" Width="200" HorizontalAlignment="Right" />
             </StackPanel>
 
         </Grid>

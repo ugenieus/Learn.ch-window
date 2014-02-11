@@ -111,7 +111,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="140" />
                 <RowDefinition Height="80" />
-                <RowDefinition Height="360" />
+                <RowDefinition Height="320" />
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -152,7 +152,7 @@
                         Grid.Row="1"
                         Grid.Column="1" Height="76">
                 <TextBlock Text="Introductory Arduino Course"
-                           FontSize="30" Style="{StaticResource titleTextGray}" />
+                           FontSize="30" Style="{StaticResource titleTextGray}" VerticalAlignment="Top" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
                 	<StackPanel x:Name="stepTag1"
                 		HorizontalAlignment="Left"
@@ -175,14 +175,18 @@
                 			Padding="2,0" />
                 	</StackPanel>
                 	<TextBlock Text="Introduction to  Arduino"
-                		FontSize="20" VerticalAlignment="Center" />
+                		FontSize="20" VerticalAlignment="Center" Margin="10,0,0,0" >
+                		<TextBlock.Foreground>
+                			<SolidColorBrush Color="{StaticResource grey}"/>
+                		</TextBlock.Foreground>
+                	</TextBlock>
                 </StackPanel>
             </StackPanel>
             <TextBlock VerticalAlignment="Bottom"
                        Grid.Row="1"
                        Grid.Column="2"
                        FontSize="30"
-                       Text="Source info" Style="{StaticResource titleTextGray}" Height="36" />
+                       Text="Source info" Style="{StaticResource titleTextGray}" Height="36" Margin="20,0,0,0" />
             <TextBlock VerticalAlignment="Bottom"
                        Grid.Row="1"
                        Grid.Column="3"
@@ -202,79 +206,158 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="330" />
                     <ColumnDefinition />
+                    <ColumnDefinition Width="220" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Row="0"
                             Grid.ColumnSpan="2"
-                            Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Bottom"
+                            Orientation="Horizontal" Margin="0,0,0,20">
+                    <TextBlock VerticalAlignment="Center"
                                FontSize="30"
                                Text="Open Source Hardware?" Style="{StaticResource titleTextGray}" />
                     <ToggleButton VerticalAlignment="Bottom"
                                   VerticalContentAlignment="Bottom"
                                   FontSize="20"
-                                  Content="edit" />
+                                  Content="edit" Style="{StaticResource ButtonEdit}" BorderThickness="0" HorizontalAlignment="Stretch" Margin="20,0,0,0" />
                 </StackPanel>
                 <StackPanel Grid.Row="1"
                             Grid.Column="0"
-                            Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Bottom"
+                            Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center"
                                FontSize="20"
-                               Text="Video description" />
+                               Text="Video description" >
+                    	<TextBlock.Foreground>
+                    		<SolidColorBrush Color="{StaticResource DarkYellow}"/>
+                    	</TextBlock.Foreground>
+                    </TextBlock>
                     <ToggleButton VerticalAlignment="Bottom"
                                   VerticalContentAlignment="Bottom"
                                   FontSize="20"
-                                  Content="edit" />
+                                  Content="edit" Style="{StaticResource ButtonEdit}" Margin="20,0,0,0" />
                 </StackPanel>
                 <StackPanel Grid.Row="1"
                             Grid.Column="1"
                             Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Bottom"
+                    <TextBlock VerticalAlignment="Center"
                                FontSize="20"
-                               Text="Recipe" />
-                    <ToggleButton HorizontalAlignment="Right"
-                                  VerticalAlignment="Bottom"
+                               Text="Recipe" Margin="10,0,0,0" >
+                    	<TextBlock.Foreground>
+                    		<SolidColorBrush Color="{StaticResource DarkYellow}"/>
+                    	</TextBlock.Foreground>
+                    </TextBlock>
+                    <ToggleButton HorizontalAlignment="Center"
+                                  VerticalAlignment="Top"
                                   VerticalContentAlignment="Bottom"
                                   FontSize="20"
-                                  Content="Add" />
+                                  Content="Add" Style="{StaticResource ButtonEdit}" Margin="20,0,0,0" Width="70" />
                 </StackPanel>
                 <TextBlock Grid.Column="0"
                            Grid.Row="2"
-                           FontSize="20"
-                           TextWrapping="WrapWholeWords"
-                           Text="Fusce et neque ut sem ultrices mollis id ac purus. Nunc iaculis pretium faucibus. Vestibulum consequat mattis risus, quis bibendum lorem tempus vitae. Sed sed aliquet eros, quis molestie metus. Pellentesque luctus velit nibh, et suscipit velit fringilla vitae. Fusce placerat libero at lacus dapibus" />
+                           FontSize="16"
+                           TextWrapping="WrapWholeWords" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource grey}"/>
+                	</TextBlock.Foreground>
+                	<Run Text="Learning the definition and use of ‘Open Source Hardware’."/>
+                	<LineBreak/>
+                	<Run/>
+                </TextBlock>
                 <TextBlock Grid.Column="1"
                            Grid.Row="2"
-                           FontSize="20"
-                           TextWrapping="WrapWholeWords"
-                           Text="lecture material 1.pdf lecture material 2.jpg lecture material 3.png" />
+                           FontSize="16"
+                           TextWrapping="WrapWholeWords" Margin="10,0,0,0" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource grey}"/>
+                	</TextBlock.Foreground>
+                	<Run Text="lecture material 1.pdf"/>
+                	<LineBreak/>
+                	<Run Text="lecture material 2.jpg"/>
+                	<LineBreak/>
+                	<Run Text="lecture material 3.png"/>
+                </TextBlock>
             </Grid>
             <StackPanel Grid.Row="2"
-                        Grid.Column="2">
+                        Grid.Column="2" Margin="20,0">
                 <TextBlock Text="Open Source Hardware?"
-                           FontSize="30" />
+                           FontSize="30" Style="{StaticResource titleTextGray}" Margin="0,20,0,0" />
                 <TextBlock Text="Video description"
-                           FontSize="20" />
-                <TextBlock Text="Fusce et neque ut sem ultrices mollis id ac purus. Nunc iaculis pretium faucibus. Vestibulum consequat mattis risus, quis bibendum lorem tempus vitae. Sed sed aliquet eros, quis molestie metus. Pellentesque luctus velit nibh, et suscipit velit fringilla vitae. Fusce placerat libero at lacus dapibus,"
-                           FontSize="20"
-                           TextWrapping="WrapWholeWords" />
+                           FontSize="20" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource DarkYellow}"/>
+                	</TextBlock.Foreground>
+                </TextBlock>
+                <TextBlock
+                           FontSize="16"
+                           TextWrapping="WrapWholeWords" >
+                	<TextBlock.Foreground>
+                		<SolidColorBrush Color="{StaticResource grey}"/>
+                	</TextBlock.Foreground>
+                	<Run Text="Learning the definition and use of ‘Open"/>
+                	<Run Text=" "/>
+                	<Run Text="Source Hardware’."/>
+                </TextBlock>
             </StackPanel>
             <Grid Grid.Row="2"
                   Grid.Column="3"
-                  Grid.RowSpan="2" Margin="0,0,0,24" Background="#FFF9F9F9">
+                  Grid.RowSpan="2" Margin="0,0,50,24" Background="White">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                <TextBlock TextWrapping="WrapWholeWords"
-                           FontSize="20"
-                           Text="Curabitur dapibus mi justo, non consectetur lectus temporat. Class aptent taciti sociosqu ad litora torquent per conubia nostravisualiza- tion. Agency: Column Five Media Creative Director: Ross Crooks Producer:…" />
+                <Border BorderBrush="#FFD4D4D4" BorderThickness="1" Padding="5" Margin="0,20,0,0">
+                	<TextBlock TextWrapping="WrapWholeWords"
+                		FontSize="16" Margin="0" >
+                		<TextBlock.Foreground>
+                			<SolidColorBrush Color="{StaticResource grey}"/>
+                		</TextBlock.Foreground>
+                		<Run Text="*"/>
+                		<LineBreak/>
+                		<Run Text="int xPos = 2;"/>
+                		<LineBreak/>
+                		<Run Text="int w=130;"/>
+                		<LineBreak/>
+                		<Run Text="int change = 2;"/>
+                		<LineBreak/>
+                		<Run/>
+                		<LineBreak/>
+                		<Run Text="void setup()"/>
+                		<LineBreak/>
+                		<Run Text="{}{"/>
+                		<LineBreak/>
+                		<Run Text="  size(842,595);"/>
+                		<LineBreak/>
+                		<Run Text="  stroke(270,238,110);"/>
+                		<LineBreak/>
+                		<Run Text="  noFill();"/>
+                		<LineBreak/>
+                		<Run Text="  background(255);"/>
+                		<LineBreak/>
+                		<Run Text="  smooth();"/>
+                		<LineBreak/>
+                		<Run Text="}"/>
+                		<LineBreak/>
+                		<Run Text="void draw()"/>
+                		<LineBreak/>
+                		<Run Text="{}{"/>
+                		<LineBreak/>
+                		<Run Text="  fill(200,100,20,10);"/>
+                		<LineBreak/>
+                		<Run Text="  ellipse(200,200,xPos,xPos);"/>
+                		<LineBreak/>
+                		<Run/>
+                		<LineBreak/>
+                		<Run Text="}"/>
+                		<LineBreak/>
+                		<Run Text="}"/>
+                		<LineBreak/>
+                		<Run/>
+                	</TextBlock>
+                </Border>
                 <Button Grid.Row="1"
                         FontSize="30"
                         Content="Save"
                         HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch" />
+                        VerticalAlignment="Stretch" Style="{StaticResource ButtonDefualt}" />
 
             </Grid>
         </Grid>

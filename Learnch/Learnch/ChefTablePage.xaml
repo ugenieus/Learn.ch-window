@@ -144,6 +144,7 @@
                     <TextBox PlaceholderText=""
                              Height="150"
                              BorderThickness="1"
+                             TextWrapping="Wrap"
                              InputScope="Chat" Text="Hi, This course is an introductory Arduino course for people, who are interested in media art, physical computing and new media. I will explain it to you step by step in detail. So, don’t be afraid of programming! Enjoy :)" >
                     	<TextBox.Foreground>
                     		<SolidColorBrush Color="{StaticResource grey}"/>

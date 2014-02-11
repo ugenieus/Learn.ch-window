@@ -180,6 +180,7 @@
     <Content Include="Assets\badge_defualt.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\badge_popup_240.png" />
     <Content Include="Assets\btn_appbar_home.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -198,6 +199,7 @@
     <Content Include="Assets\icon_folder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\icon_launch.png" />
     <Content Include="Assets\icon_plus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

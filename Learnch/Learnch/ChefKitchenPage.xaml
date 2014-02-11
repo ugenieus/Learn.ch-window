@@ -43,6 +43,88 @@
         </Style>
         
     </Page.Resources>
+	<Page.TopAppBar>
+		<AppBar Margin="0,0,0,566"
+			Background="#E2FFFFFF">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50*" />
+					<ColumnDefinition Width="50*" />
+				</Grid.ColumnDefinitions>
+				<StackPanel Orientation="Horizontal"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					Grid.ColumnSpan="2">
+					<Button HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Style="{StaticResource BtnAppbar_Nav}" Click="HomePage_Click">
+						<StackPanel>
+							<Image Source="Assets/btn_appbar_home.png"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Width="100"
+								Height="100" />
+							<TextBlock TextWrapping="Wrap"
+								Text="Learnch Home"
+								TextAlignment="Center"
+								FontSize="21.333"
+								CharacterSpacing="-50"
+								Foreground="#FF6C6C6C"
+								Margin="0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Center"
+								Width="130" />
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Style="{StaticResource BtnAppbar_Nav}"
+						Click="ChefKitchen_Click">
+						<StackPanel>
+							<Image Source="Assets/btn_appbar_kitchin.png"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Width="100"
+								Height="100" />
+							<TextBlock TextWrapping="Wrap"
+								Text="My Kitchen"
+								TextAlignment="Center"
+								FontSize="21.333"
+								CharacterSpacing="-50"
+								Foreground="#FF6C6C6C"
+								Margin="0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Center"
+								Width="130" />
+						</StackPanel>
+					</Button>
+					<Button HorizontalAlignment="Stretch"
+						VerticalAlignment="Stretch"
+						Style="{StaticResource BtnAppbar_Nav}"
+						Click="ChefTable_Click">
+						<StackPanel>
+							<Image Source="Assets/btn_appbar_make_course.png"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Width="100"
+								Height="100" />
+							<TextBlock TextWrapping="Wrap"
+								Text="Make Course"
+								TextAlignment="Center"
+								FontSize="21.333"
+								CharacterSpacing="-50"
+								Foreground="#FF6C6C6C"
+								Margin="0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Center"
+								Width="130" />
+						</StackPanel>
+					</Button>
+				</StackPanel>
+			</Grid>
+		</AppBar>
+
+	</Page.TopAppBar>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
